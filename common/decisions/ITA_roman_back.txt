@@ -1,0 +1,439 @@
+form_roman_empire_category = {
+	form_nostro_mare = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = ITA
+			OR = {
+				has_dlc = "Waking the Tiger"
+				has_dlc = "By Blood Alone"
+			}
+		}
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			NOT = {
+				country_exists = FRA
+				has_global_flag = form_roman_empire_flag
+			}
+			AND = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+			NOT = {
+				has_completed_focus = ITA_mare_nostrum_bba
+				has_completed_focus = ITA_the_catholic_dominion
+				has_completed_focus = ITA_towards_a_greater_italy
+			}
+		}
+
+		available = {
+			is_subject = no
+			NOT = {
+				has_completed_focus = ITA_mare_nostrum_bba
+				has_completed_focus = ITA_the_catholic_dominion
+				has_completed_focus = ITA_towards_a_greater_italy
+			}
+			# Italy
+			custom_trigger_tooltip = {
+				tooltip = form_spqr_italy_required_states_tt
+				controls_state = 158
+				controls_state = 162
+				controls_state = 114
+				controls_state = 2
+				controls_state = 117
+				controls_state = 156
+				controls_state = 115
+				controls_state = 849
+				controls_state = 157
+				controls_state = 161
+				controls_state = 160
+				controls_state = 736
+				controls_state = 852
+				controls_state = 39
+				controls_state = 850
+				controls_state = 849
+				controls_state = 852
+				controls_state = 159
+			}
+		}
+		cost = 70
+		days_remove = 70
+		remove_effect = {
+			complete_national_focus = ITA_mare_nostrum_bba
+			# Albania
+			custom_effect_tooltip = claim_albania_required_states_tt
+			hidden_effect = {
+				44 = { add_claim_by = ITA }
+				934 = { add_claim_by = ITA }
+				805 = { add_claim_by = ITA }
+			}
+			# Yugoslavia
+			custom_effect_tooltip = claim_YUG_required_states_tt
+			hidden_effect = {
+				163 = { add_claim_by = ITA }
+				853 = { add_claim_by = ITA }
+				103 = { add_claim_by = ITA }
+				104 = { add_claim_by = ITA }
+				804 = { add_claim_by = ITA }
+				105 = { add_claim_by = ITA }
+			}
+			# Greece
+			custom_effect_tooltip = claim_greece_required_states_tt
+			hidden_effect = {
+				185 = { add_claim_by = ITA }
+				731 = { add_claim_by = ITA }
+				47 = { add_claim_by = ITA }
+				186 = { add_claim_by = ITA }
+				184 = { add_claim_by = ITA }
+				187 = { add_claim_by = ITA }
+				182 = { add_claim_by = ITA }
+				164 = { add_claim_by = ITA } #DODECANESE initially controlled by Italy
+			}
+			# Turkey
+			custom_effect_tooltip = claim_turkey_required_states_tt
+			hidden_effect = {
+				341 = { add_claim_by = ITA }
+				797 = { add_claim_by = ITA }
+				340 = { add_claim_by = ITA }
+				339 = { add_claim_by = ITA }
+				342 = { add_claim_by = ITA }
+				345 = { add_claim_by = ITA }
+				344 = { add_claim_by = ITA }
+				799 = { add_claim_by = ITA }
+			}
+			# Spain
+			custom_effect_tooltip = claim_spain_required_states_tt
+			hidden_effect = {
+				165 = { add_claim_by = ITA }
+				177 = { add_claim_by = ITA }
+				167 = { add_claim_by = ITA }
+				168 = { add_claim_by = ITA }
+				173 = { add_claim_by = ITA }
+			}
+			# France
+			custom_effect_tooltip = claim_france_required_states_tt
+			hidden_effect = {
+				1 = { add_claim_by = ITA }
+				735 = { add_claim_by = ITA }
+				851 = { add_claim_by = ITA }
+				21 = { add_claim_by = ITA }
+				22 = { add_claim_by = ITA }
+				31 = { add_claim_by = ITA }
+			}
+			# British Mediterranean
+			custom_effect_tooltip = claim_coastal_uk_required_states_tt
+			hidden_effect = {
+				118 = { add_claim_by = ITA }
+				116 = { add_claim_by = ITA }
+				183 = { add_claim_by = ITA }
+			}
+			# North Africa (Morocco to Libya)
+			custom_effect_tooltip = claim_north_africa_required_states_tt
+			hidden_effect = {
+				#Morocco
+				290 = { add_claim_by = ITA }
+				461 = { add_claim_by = ITA }
+				#Algeria
+				459 = { add_claim_by = ITA }
+				460 = { add_claim_by = ITA }
+				#Tunisia
+				458 = { add_claim_by = ITA }
+				665 = { add_claim_by = ITA }
+				#Libya
+				448 = { add_claim_by = ITA }
+				449 = { add_claim_by = ITA }
+				450 = { add_claim_by = ITA }
+				451 = { add_claim_by = ITA }
+				661 = { add_claim_by = ITA }
+				662 = { add_claim_by = ITA }
+				663 = { add_claim_by = ITA }
+				513 = { add_claim_by = ITA } #Tlemcen
+				514 = { add_claim_by = ITA } #Algerian Desert
+				462 = { add_claim_by = ITA } #Marrakech
+				783 = { add_claim_by = ITA } #Sidi Ifni
+			}
+			# Middle East (Egypt to Syria)
+			custom_effect_tooltip = claim_middle_east_required_states_tt
+			hidden_effect = {
+				#Egypt
+				452 = { add_claim_by = ITA }
+				447 = { add_claim_by = ITA }
+				907 = { add_claim_by = ITA }
+				446 = { add_claim_by = ITA }
+				453 = { add_claim_by = ITA }
+				#Palestine
+				454 = { add_claim_by = ITA }
+				#Lebanon
+				553 = { add_claim_by = ITA }
+				#Syria
+				677 = { add_claim_by = ITA }
+				799 = { add_claim_by = ITA }
+				552 = { add_claim_by = ITA } #Western Desert
+				456 = { add_claim_by = ITA } #Aswan
+				457 = { add_claim_by = ITA } #Eastern Desert
+			}
+			554 = { add_claim_by = ITA } #Damascus
+			455 = { add_claim_by = ITA } #Jordan
+			854 = { add_claim_by = ITA } #Jawf
+			855 = { add_claim_by = ITA } #Tabuk
+			656 = { add_claim_by = ITA } #Kuwait
+			291 = { add_claim_by = ITA } #Baghdad
+			675 = { add_claim_by = ITA } #Al Hajara
+			676 = { add_claim_by = ITA } #Mosul
+			680 = { add_claim_by = ITA } #Deir-az-Zur
+			350 = { add_claim_by = ITA } #Diyarbakir
+
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 185
+			}
+		}
+
+		ai_will_do = { factor = 200 }
+	}
+
+	demand_FRA_required_states = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = ITA
+			OR = {
+				has_dlc = "Waking the Tiger"
+				has_dlc = "By Blood Alone"
+			}
+		}
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			NOT = {
+				country_exists = FRA
+				has_global_flag = form_roman_empire_flag
+			}
+			AND = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+			OR = {
+				has_completed_focus = ITA_mare_nostrum_bba
+				has_completed_focus = ITA_the_catholic_dominion
+			}
+		}
+		available = {
+			GER = {
+				any_owned_state = {
+					is_claimed_by = ITA
+				}
+			}
+		}
+		complete_effect = {
+			add_political_power = -30
+			every_state = {
+				limit = {
+					is_owned_by = GER
+					is_claimed_by = ITA
+				}
+				transfer_state_to = ITA
+			}
+		}
+
+		ai_will_do = { factor = 200 }
+	}
+
+	demand_ENG_required_states = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = ITA
+			OR = {
+				has_dlc = "Waking the Tiger"
+				has_dlc = "By Blood Alone"
+			}
+		}
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			NOT = {
+				country_exists = FRA
+				has_global_flag = form_roman_empire_flag
+			}
+			AND = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+			OR = {
+				has_completed_focus = ITA_mare_nostrum_bba
+				has_completed_focus = ITA_the_catholic_dominion
+			}
+		}
+		available = {
+			ENG = {
+				any_owned_state = {
+					is_claimed_by = ITA
+				}
+			}
+			AOI = { is_puppet_of = ITA }
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_political_power = -35
+			ENG = { country_event = { id = cjp.3001 hours = 6 } }
+		}
+
+		ai_will_do = { factor = 200 }
+	}
+
+	demand_balkan_required_states = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = ITA
+			OR = {
+				has_dlc = "Waking the Tiger"
+				has_dlc = "By Blood Alone"
+			}
+		}
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			AND = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+			OR = {
+				has_completed_focus = ITA_mare_nostrum_bba
+				has_completed_focus = ITA_the_catholic_dominion
+			}
+			NOT = {
+				country_exists = YUG
+				has_global_flag = form_roman_empire_flag
+			}
+		}
+		available = {
+			any_country = {
+				is_in_faction_with = ROOT
+				BUL_is_balkan_nation = yes
+				any_owned_state = {
+					OR = {
+						is_core_of = ITA
+						is_claimed_by = ITA
+					}
+					NOT = { state = 106 }
+				}
+			}
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					owner = {
+						is_in_faction_with = ROOT
+						BUL_is_balkan_nation = yes
+					}
+					OR = {
+						is_core_of = ITA
+						is_claimed_by = ITA
+					}
+					NOT = { state = 106 }
+				}
+				transfer_state_to = ITA
+			}
+		}
+
+		ai_will_do = { factor = 200 }
+	}
+
+	demand_SPR_required_states = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = ITA
+			OR = {
+				has_dlc = "Waking the Tiger"
+				has_dlc = "By Blood Alone"
+			}
+		}
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			AND = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+			OR = {
+				has_completed_focus = ITA_mare_nostrum_bba
+				has_completed_focus = ITA_the_catholic_dominion
+			}
+			NOT = {
+				country_exists = YUG
+				has_global_flag = form_roman_empire_flag
+			}
+		}
+		available = {
+			has_global_flag = scw_over
+			SPR = {
+				any_owned_state = {
+					is_claimed_by = ITA
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 7
+		remove_effect = {
+			add_political_power = -100
+			SPR = { country_event = { id = cjp.3002 hours = 20 } }
+		}
+
+		ai_will_do = { factor = 200 }
+	}
+
+	demand_TUR_required_states = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = ITA
+			OR = {
+				has_dlc = "Waking the Tiger"
+				has_dlc = "By Blood Alone"
+			}
+		}
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			AND = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+			OR = {
+				has_completed_focus = ITA_mare_nostrum_bba
+				has_completed_focus = ITA_the_catholic_dominion
+			}
+			NOT = {
+				country_exists = YUG
+				has_global_flag = form_roman_empire_flag
+			}
+		}
+		available = {
+			TUR = {
+				any_owned_state = {
+					is_claimed_by = ITA
+				}
+			}
+		}
+		fire_only_once = yes
+		days_remove = 7
+		remove_effect = {
+			add_political_power = -50
+			TUR = { country_event = { id = cjp.3003 hours = 20 } }
+		}
+
+		ai_will_do = { factor = 200 }
+	}
+}

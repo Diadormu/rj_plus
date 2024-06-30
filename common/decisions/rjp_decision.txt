@@ -1,0 +1,149 @@
+form_nation_mod_category = {
+	SOV_returned_PRC_territory = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			NOT = { has_global_flag = form_greater_china_flag }
+			is_in_faction_with = TAN
+			is_in_faction_with = MON
+			OR = {
+				has_country_leader = { character = SOV_supreme_soviet }
+				is_in_faction_with = PRC
+				PRC = { has_completed_focus = PRC_proclaim_the_peoples_republic }
+			}
+			owns_state = 408
+			owns_state = 409
+			owns_state = 560
+			owns_state = 561
+			owns_state = 657
+			owns_state = 586
+			owns_state = 732
+		}
+		available = {
+			has_country_leader = { character = SOV_supreme_soviet }
+			is_in_faction_with = PRC
+			PRC = { has_completed_focus = PRC_proclaim_the_peoples_republic }
+			is_in_faction_with = JAP
+			is_in_faction_with = TAN
+			TAN = { owns_state = 329 }
+			is_in_faction_with = MON
+			MON = {
+				owns_state = 330
+				owns_state = 817
+				owns_state = 818
+				owns_state = 819
+				owns_state = 820
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			PRC = {
+				transfer_state = 408
+				transfer_state = 409
+				transfer_state = 560
+				transfer_state = 561
+				transfer_state = 657
+				transfer_state = 586
+				transfer_state = 732
+				transfer_state = 537
+				transfer_state = 655
+				annex_country = { target = TAN }
+				annex_country = { target = MON }
+			}
+			408 = { add_core_of = PRC }
+			409 = { add_core_of = PRC }
+			560 = { add_core_of = PRC }
+			561 = { add_core_of = PRC }
+			657 = { add_core_of = PRC }
+			586 = { add_core_of = PRC }
+			732 = { add_core_of = PRC }
+			537 = { add_core_of = PRC }
+			655 = { add_core_of = PRC }
+			329 = { add_core_of = PRC }
+			330 = { add_core_of = PRC }
+			817 = { add_core_of = PRC }
+			818 = { add_core_of = PRC }
+			819 = { add_core_of = PRC }
+			820 = { add_core_of = PRC }
+			441 = { add_claim_by = PRC }
+			787 = { add_claim_by = PRC }
+			434 = { add_claim_by = PRC }
+		}
+	}
+
+	SOV_returned_SWE_territory = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = SOV
+		}
+		visible = {
+			OR = {
+				has_global_flag = form_scandinavia_flag
+				has_global_flag = form_nordic_league_flag
+			}
+			OR = {
+				is_in_faction_with = SWE
+				has_country_leader = { character = SOV_supreme_soviet }
+			}
+			SWE = { is_subject = no }
+		}
+		available = {
+			has_country_leader = { character = SOV_supreme_soviet }
+			is_in_faction_with = SWE
+			OR = {
+				has_global_flag = form_scandinavia_flag
+				has_global_flag = form_nordic_league_flag
+			}
+			SWE = {
+				has_government = communism
+				OR = {
+					has_cosmetic_tag = SCA_UNIFIED
+					has_cosmetic_tag = NDC_UNIFIED
+				}
+			}
+			owns_state = 213
+			owns_state = 215
+			owns_state = 216
+		}
+		fire_only_once = yes
+		complete_effect = {
+			SWE = {
+				transfer_state = 213
+				transfer_state = 215
+				transfer_state = 216
+				if = {
+					limit = {
+						146 = { is_owned_by = ROOT }
+						147 = { is_owned_by = ROOT }
+						722 = { is_owned_by = ROOT }
+					}
+					transfer_state = 146
+					transfer_state = 147
+					transfer_state = 722
+				}
+			}
+		}
+	}
+}
+
+foreign_influence = {
+	player_leader_faction = {
+		icon = generic_form_nation
+		allowed = {
+			is_ai = no
+		}
+		visible = {
+			OR = {
+				is_in_faction_with = GER
+				is_in_faction_with = SOV
+			}
+			is_faction_leader = no
+		}
+		complete_effect = {
+			set_faction_leader = yes
+		}
+		ai_will_do = { factor = 0 }
+	}
+}
