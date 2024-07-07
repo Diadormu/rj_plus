@@ -1,0 +1,4 @@
+form_PORe_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_picture_generic_polynesia
+}

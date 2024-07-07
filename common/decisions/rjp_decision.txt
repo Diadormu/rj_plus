@@ -147,3 +147,110 @@ foreign_influence = {
 		ai_will_do = { factor = 0 }
 	}
 }
+
+form_PORe_category = {
+	form_PORe = {
+		icon = generic_form_nation
+		allowed = {
+			original_tag = JAP
+		}
+		visible = {
+			original_tag = JAP
+			NOT = { has_global_flag = form_PORe_flag }
+		}
+		available = {
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+			custom_trigger_tooltip = {
+				tooltip = form_PORe_JAP_required_states_tt
+				controls_state = 282
+				controls_state = 526
+				controls_state = 528
+				controls_state = 529
+				controls_state = 530
+				controls_state = 531
+				controls_state = 532
+				controls_state = 533
+				controls_state = 534
+				controls_state = 535
+				controls_state = 536
+				#controls_state = 537
+				controls_state = 555
+				controls_state = 645
+				controls_state = 646
+				controls_state = 970
+				controls_state = 971
+				controls_state = 972
+				controls_state = 973
+				controls_state = 974
+			}
+			custom_trigger_tooltip = {
+				tooltip = form_PORe_PHI_required_states_tt
+				controls_state = 327
+				controls_state = 623
+				controls_state = 624
+				controls_state = 625
+				controls_state = 626
+				controls_state = 627
+				controls_state = 628
+			}
+			controls_state = 284
+			controls_state = 629
+			controls_state = 684
+			controls_state = 638
+			controls_state = 641
+			controls_state = 646
+			controls_state = 723
+			controls_state = 726
+		}
+		complete_effect = {
+			set_cosmetic_tag = united_PORe
+			# Polynesia
+			custom_effect_tooltip = form_country_polynesia_coring_states_tt
+			hidden_effect = {
+				284 = { add_core_of = ROOT }
+				#524 = { add_core_of = ROOT } #Taiwan
+				629 = { add_core_of = ROOT }
+				630 = { add_core_of = ROOT }
+				631 = { add_core_of = ROOT }
+				632 = { add_core_of = ROOT }
+				633 = { add_core_of = ROOT }
+				634 = { add_core_of = ROOT }
+				635 = { add_core_of = ROOT }
+				636 = { add_core_of = ROOT }
+				638 = { add_core_of = ROOT }
+				639 = { add_core_of = ROOT }
+				641 = { add_core_of = ROOT }
+				642 = { add_core_of = ROOT }
+				643 = { add_core_of = ROOT }
+				645 = { add_core_of = ROOT } #Iwo Jima
+				646 = { add_core_of = ROOT }
+				647 = { add_core_of = ROOT }
+				648 = { add_core_of = ROOT }
+				684 = { add_core_of = ROOT }
+				723 = { add_core_of = ROOT }
+				725 = { add_core_of = ROOT }
+				726 = { add_core_of = ROOT }
+				727 = { add_core_of = ROOT }
+				734 = { add_core_of = ROOT }
+				270 = { add_core_of = ROOT } # Pitcairn
+				948 = { add_core_of = ROOT } # Easter Island
+			}
+			custom_effect_tooltip = form_PORe_PHI_coring_states_tt
+			hidden_effect = {
+				327 = { add_core_of = ROOT }
+				623 = { add_core_of = ROOT }
+				624 = { add_core_of = ROOT }
+				625 = { add_core_of = ROOT }
+				626 = { add_core_of = ROOT }
+				627 = { add_core_of = ROOT }
+				628 = { add_core_of = ROOT }
+			}
+			hidden_effect = { set_global_flag = form_PORe_flag	 }
+		}
+
+		ai_will_do = { factor = 200 }
+	}
+}
