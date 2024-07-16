@@ -186,14 +186,18 @@ form_roman_empire_category = {
 			350 = { add_claim_by = ITA } #Diyarbakir
 
 			if = {
-				limit = {
-					is_ai = yes
-				}
+				limit = { is_ai = yes }
 				add_political_power = 185
 			}
 		}
 
-		ai_will_do = { factor = 200 }
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 200
+				has_war_with = GRE
+			}
+		}
 	}
 
 	demand_FRA_required_states = {

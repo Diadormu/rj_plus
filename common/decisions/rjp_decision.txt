@@ -1,9 +1,7 @@
 form_nation_mod_category = {
 	SOV_returned_PRC_territory = {
 		icon = generic_form_nation
-		allowed = {
-			original_tag = SOV
-		}
+		allowed = { original_tag = SOV }
 		visible = {
 			NOT = { has_global_flag = form_greater_china_flag }
 			is_in_faction_with = TAN
@@ -39,6 +37,10 @@ form_nation_mod_category = {
 		}
 		fire_only_once = yes
 		complete_effect = {
+			hidden_effect = {
+				TAN = { delete_unit = { disband = yes } }
+				MON = { delete_unit = { disband = yes } }
+			}
 			PRC = {
 				transfer_state = 408
 				transfer_state = 409
@@ -71,13 +73,13 @@ form_nation_mod_category = {
 			787 = { add_claim_by = PRC }
 			434 = { add_claim_by = PRC }
 		}
+
+		ai_will_do = { factor = 200 }
 	}
 
 	SOV_returned_SWE_territory = {
 		icon = generic_form_nation
-		allowed = {
-			original_tag = SOV
-		}
+		allowed = { original_tag = SOV }
 		visible = {
 			OR = {
 				has_global_flag = form_scandinavia_flag
@@ -125,6 +127,34 @@ form_nation_mod_category = {
 				}
 			}
 		}
+
+		ai_will_do = { factor = 200 }
+	}
+
+	VIN_returned_SIA_territory = {
+		icon = generic_form_nation
+		allowed = { original_tag = VIN }
+		visible = {
+			has_global_flag = form_rattanakosin_kingdom_flag
+			is_in_faction_with = SIA
+		}
+		available = {
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}
+			owns_state = 741
+			owns_state = 670
+		}
+		fire_only_once = yes
+		complete_effect = {
+			SIA = {
+				transfer_state = 741
+				transfer_state = 670
+			}
+		}
+
+		ai_will_do = { factor = 200 }
 	}
 }
 

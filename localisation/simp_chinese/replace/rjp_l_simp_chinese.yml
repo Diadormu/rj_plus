@@ -24,6 +24,7 @@
 
   SOV_returned_PRC_territory: "向[PRC.GetName]归还领土"
   SOV_returned_SWE_territory: "向[SWE.GetName]归还领土"
+  VIN_returned_SIA_territory: "向[SIA.GetName]归还领土"
   player_leader_faction: "玩家领导阵营（非必要慎用）"
 
   form_PORe_category: "统一太平洋诸岛"
@@ -33,8 +34,8 @@
   form_PORe_JAP_required_states_tt: "控制§Y日本§!的所有地区。"
   form_PORe_PHI_required_states_tt: "控制§Y菲律宾§!的所有地区。"
   form_PORe_PHI_coring_states_tt: "获得§Y菲律宾§!所有地区的核心。"
-  united_PORe: "太平洋共和国"
-  united_PORe_ADJ: "太平洋共和国"
+  united_PORe: "太平洋"
+  united_PORe_ADJ: "太平洋"
   united_PORe_communism: "太平洋共和国"
   united_PORe_communism_DEF: "太平洋人民共和国"
   united_PORe_democratic: "太平洋联邦"
