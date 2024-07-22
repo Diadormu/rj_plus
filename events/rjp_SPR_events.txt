@@ -115,9 +115,11 @@ country_event = {
 				FROM = { is_ai = yes }
 				ROOT = { is_ai = yes }
 			}
-			declare_war_on = {
-				target = TUR
-				type = annex_everything
+			ITA = {
+				declare_war_on = {
+					target = TUR
+					type = annex_everything
+				}
 			}
 		}
 		else = {

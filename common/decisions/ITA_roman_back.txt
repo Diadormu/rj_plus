@@ -58,9 +58,9 @@ form_roman_empire_category = {
 				controls_state = 159
 			}
 		}
-		cost = 70
 		days_remove = 70
 		remove_effect = {
+			add_political_power = -70
 			complete_national_focus = ITA_mare_nostrum_bba
 			# Albania
 			custom_effect_tooltip = claim_albania_required_states_tt
@@ -192,9 +192,9 @@ form_roman_empire_category = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
-				factor = 200
+				add = 200
 				has_war_with = GRE
 			}
 		}
@@ -374,10 +374,6 @@ form_roman_empire_category = {
 				has_completed_focus = ITA_mare_nostrum_bba
 				has_completed_focus = ITA_the_catholic_dominion
 			}
-			NOT = {
-				country_exists = YUG
-				has_global_flag = form_roman_empire_flag
-			}
 		}
 		available = {
 			has_global_flag = scw_over
@@ -403,7 +399,13 @@ form_roman_empire_category = {
 			}
 		}
 
-		ai_will_do = { factor = 200 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 200
+				NOT = { country_exists = YUG }
+			}
+		}
 	}
 
 	demand_TUR_required_states = {
@@ -428,10 +430,6 @@ form_roman_empire_category = {
 				has_completed_focus = ITA_mare_nostrum_bba
 				has_completed_focus = ITA_the_catholic_dominion
 			}
-			NOT = {
-				country_exists = GRE
-				has_global_flag = form_roman_empire_flag
-			}
 		}
 		available = {
 			TUR = {
@@ -447,7 +445,13 @@ form_roman_empire_category = {
 			TUR = { country_event = { id = cjp.3003 hours = 20 } }
 		}
 
-		ai_will_do = { factor = 200 }
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 200
+				NOT = { country_exists = GRE }
+			}
+		}
 	}
 }
 
