@@ -227,11 +227,11 @@ form_PORe_category = {
 				controls_state = 555
 				controls_state = 645
 				controls_state = 646
-				controls_state = 970
-				controls_state = 971
-				controls_state = 972
-				controls_state = 973
-				controls_state = 974
+				controls_state = 982
+				controls_state = 983
+				controls_state = 984
+				controls_state = 985
+				controls_state = 986
 			}
 			custom_trigger_tooltip = {
 				tooltip = form_PORe_PHI_required_states_tt
