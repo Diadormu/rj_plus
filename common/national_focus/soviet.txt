@@ -2073,7 +2073,7 @@ focus_tree = {
 		x = 2
 		y = 0
 		relative_position_id = SOV_no_time_for_peace
-		cost = 10
+		cost = 5
 
 		allow_branch = {
 			has_government = communism
@@ -5705,10 +5705,11 @@ focus_tree = {
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SOV_national_academies_of_sciences_available_tt
+				tooltip = SOV_CSR_national_academies_of_sciences_available_tt
 				set_temp_variable = { SOV_current_academies = SOV_academy_of_sciences_research_speed_factor } #This is a factor (0.X value)
 				multiply_temp_variable = { SOV_current_academies = 100 } #Now it is possible to track the current number of civs
-				check_variable = { SOV_current_academies = SOV_academies_required_for_atomic_bomb_project compare = greater_than_or_equals }
+				#check_variable = { SOV_current_academies = SOV_academies_required_for_atomic_bomb_project compare = greater_than_or_equals }
+				check_variable = { SOV_current_academies = 4 compare = greater_than_or_equals }
 			}
 			is_subject = no
 		}
@@ -7911,12 +7912,13 @@ focus_tree = {
 				technology = amphibious_tank_chassis
 				technology = amphibious_drive
 			}
+			
 			add_breakthrough_progress = {
-				specialization = specialization_land
+				specialization = specialization_air
 				value = 0.5
 			}
 			add_breakthrough_progress = {
-				specialization = specialization_air
+				specialization = specialization_land
 				value = 0.5
 			}
 			add_breakthrough_progress = {
@@ -7927,7 +7929,13 @@ focus_tree = {
 				specialization = specialization_nuclear
 				value = 0.5
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = SOV_idea_wonder_projects
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			unlock_decision_tooltip = sov_siberia_develop_project
 		}
 	}
 	
@@ -7951,6 +7959,7 @@ focus_tree = {
 				remove_idea = SOV_idea_wonder_projects
 				add_idea = SOV_idea_wonder_projects_2
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					can_construct_building = land_facility
@@ -7983,6 +7992,7 @@ focus_tree = {
 					nuclear_facility = 1
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -8062,12 +8072,15 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_breakthrough_progress = {
-				specialization = specialization_land
-				value = 2.0
+			hidden_effect = {
+				play_song = "the_glorious_road_leader"
 			}
 			add_breakthrough_progress = {
 				specialization = specialization_air
+				value = 3.0
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_land
 				value = 2.0
 			}
 			add_breakthrough_progress = {
@@ -8078,6 +8091,7 @@ focus_tree = {
 				specialization = specialization_nuclear
 				value = 2.0
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					has_idea = SOV_idea_wonder_projects_3
