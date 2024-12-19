@@ -27,6 +27,9 @@
   VIN_returned_SIA_territory: "向[SIA.GetName]归还领土"
   player_leader_faction: "玩家领导阵营（非必要慎用）"
 
+  HUN_unite_ROM: "联合罗马尼亚"
+  HUN_form_european_union: "$form_european_union$"
+
   form_PORe_category: "统一太平洋诸岛"
   form_PORe_category_desc: "随着夏威夷群岛、奥特亚罗瓦岛、塔希提岛和萨摩亚群岛都在我们控制之下，我们能够团结所有太平洋地区的人民。"
   form_PORe: "成立太平洋共和国"

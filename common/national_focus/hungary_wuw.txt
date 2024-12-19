@@ -11447,7 +11447,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = wuw_HUN_parade_istvan_bethlens_platform
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -11490,7 +11490,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = wuw_HUN_parade_istvan_bethlens_platform
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -13373,7 +13373,7 @@ focus_tree = {
 	focus = {
 		id = wuw_HUN_goulash_communism
 		icon = GFX_focus_HUN_goulash_communism
-		prerequisite = { focus = wuw_HUN_join_the_comintern }
+		prerequisite = { focus = wuw_HUN_join_the_comintern focus = wuw_HUN_restore_the_socialist_federative_republic }
 		#mutually_exclusive = { focus = wuw_HUN_approach_the_diasporas }
 		x = 0
 		y = 1
@@ -13467,7 +13467,7 @@ focus_tree = {
 	focus = {
 		id = wuw_HUN_joint_hungarian_soviet_research_effort
 		icon = GFX_focus_generic_socialist_science
-		prerequisite = { focus = wuw_HUN_join_the_comintern }
+		prerequisite = { focus = wuw_HUN_join_the_comintern focus = wuw_HUN_restore_the_socialist_federative_republic }
 		#mutually_exclusive = { focus = wuw_HUN_approach_the_diasporas }
 		x = -1
 		y = 2
@@ -13663,10 +13663,8 @@ focus_tree = {
 
 		completion_reward = {
 
-			swap_ideas = {
-				remove_idea = wuw_HUN_the_hungarian_red_army
-				add_idea = wuw_HUN_the_hungarian_red_army_suppression
-			}
+			add_ideas = { soldiers_of_the_steppe }
+			add_ideas = HUN_mobile_army_efforts_idea
 
 			#custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -13684,7 +13682,7 @@ focus_tree = {
 		id = wuw_HUN_soviet_hungarian_military_academy
 		icon = GFX_focus_generic_soviet_politics
 		prerequisite = { focus = wuw_HUN_restore_the_hungarian_red_army }
-		prerequisite = { focus = wuw_HUN_join_the_comintern }
+		prerequisite = { focus = wuw_HUN_join_the_comintern focus = wuw_HUN_restore_the_socialist_federative_republic }
 		#mutually_exclusive = { focus = wuw_HUN_approach_the_diasporas }
 		x = -1
 		y = 1
@@ -13814,7 +13812,10 @@ focus_tree = {
 
 		bypass = {
 			CZE = {
-				is_in_faction_with = SOV
+				OR = {
+					exists = no
+					is_in_faction_with = SOV
+				}
 			}
 		}
 
@@ -13865,7 +13866,10 @@ focus_tree = {
 
 		bypass = {
 			ROM = {
-				is_in_faction_with = SOV
+				OR = {
+					exists = no
+					is_in_faction_with = SOV
+				}
 			}
 		}
 
@@ -13951,6 +13955,10 @@ focus_tree = {
 		completion_reward = {
 
 			add_manpower = 19000
+			swap_ideas = {
+				remove_idea = wuw_HUN_the_hungarian_red_army
+				add_idea = wuw_HUN_the_hungarian_red_army_suppression
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -14282,7 +14290,7 @@ focus_tree = {
 		will_lead_to_war_with = CZE
 		will_lead_to_war_with = SLO
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -14376,7 +14384,7 @@ focus_tree = {
 		will_lead_to_war_with = TRA
 		will_lead_to_war_with = ROM
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -14472,7 +14480,7 @@ focus_tree = {
 		will_lead_to_war_with = TRA
 		will_lead_to_war_with = SER
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -14663,6 +14671,21 @@ focus_tree = {
 			add_stability = 0.1
 			add_war_support = 0.1
 
+			custom_effect_tooltip = HABSBURG_joint_ft_unlock_tt
+
+			hidden_effect = {
+				set_global_flag = AH_joint_tree_activated_flag
+
+				every_country = {
+					limit = {
+						HABSBURG_is_a_habsburg_viable_nation = yes
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+
+			# Set Hungary as Leader of the federation
+			set_variable = { global.AH_originator_country = ROOT }
 		}
 	}
 
@@ -15289,7 +15312,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_HISTORICAL }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -16408,7 +16431,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_WAR_SUPPORT }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
