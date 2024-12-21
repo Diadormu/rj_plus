@@ -263,7 +263,7 @@ form_roman_empire_category = {
 			}
 		}
 
-		ai_will_do = { factor = 200 }
+		ai_will_do = { base = 200 }
 	}
 
 	demand_ENG_required_states = {
@@ -307,7 +307,7 @@ form_roman_empire_category = {
 			ENG = { country_event = { id = cjp.3001 hours = 6 } }
 		}
 
-		ai_will_do = { factor = 200 }
+		ai_will_do = { base = 200 }
 	}
 
 	demand_balkan_required_states = {
@@ -367,7 +367,7 @@ form_roman_empire_category = {
 			}
 		}
 
-		ai_will_do = { factor = 200 }
+		ai_will_do = { base = 200 }
 	}
 
 	demand_SPR_required_states = {
@@ -516,7 +516,7 @@ eng_ai_common_functions = {
 			119 = { transfer_state_to = ENG }
 		}
 
-		ai_will_do = { factor = 200 }
+		ai_will_do = { base = 200 }
 	}
 }
 
@@ -543,5 +543,6 @@ Ger_babarosa_attack = {
 		remove_effect = {
 			complete_national_focus = GER_operation_weserubung
 		}
+		ai_will_do = { base = 200}
 	}
 }

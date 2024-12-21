@@ -2,3 +2,14 @@ form_PORe_category = {
 	icon = generic_formable_nations
 	picture = GFX_decision_cat_picture_generic_polynesia
 }
+HUN_closer_EUR_cat = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 10
+	allowed = {
+		original_tag = HUN
+	}
+	visible_when_empty = no
+	visible = {
+		has_completed_focus = wuw_HUN_a_revolutionary_greater_hungary
+	}
+}

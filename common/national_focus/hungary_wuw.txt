@@ -12141,7 +12141,7 @@ focus_tree = {
 				}
 				NOT = { has_completed_focus = wuw_HUN_continue_the_regency }
 				NOT = { has_completed_focus = wuw_HUN_end_the_regency }
-				NOT = { has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic }
+				#NOT = { has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic }
 				NOT = { has_completed_focus = wuw_HUN_establish_the_second_republic }
 			}
 		}
@@ -12256,17 +12256,17 @@ focus_tree = {
 			}
 		}
 
-		offset = {
-			x = -6
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
-			}
-		}
+		#offset = {
+		#	x = -6
+		#	y = 0
+		#	trigger = {
+		#		has_game_rule = {
+		#			rule = obsolete_focus_branches_visibility
+		#			option = HIDE
+		#		}
+		#		has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
+		#	}
+		#}
 
 		available = {
 			OR = {
@@ -13338,17 +13338,17 @@ focus_tree = {
 			factor = 15
 		}
 
-		offset = {
-			x = -5
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
-			}
-		}
+		#offset = {
+		#	x = -5
+		#	y = 0
+		#	trigger = {
+		#		has_game_rule = {
+		#			rule = obsolete_focus_branches_visibility
+		#			option = HIDE
+		#		}
+		#		has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
+		#	}
+		#}
 
 		available = {
 			wuw_HUN_does_not_have_trianon = yes
@@ -14686,6 +14686,8 @@ focus_tree = {
 
 			# Set Hungary as Leader of the federation
 			set_variable = { global.AH_originator_country = ROOT }
+
+			custom_effect_tooltip = BEL_european_community_tt
 		}
 	}
 
@@ -14892,7 +14894,7 @@ focus_tree = {
 		id = wuw_HUN_avoid_interventionalist_destablilization
 		icon = GFX_goal_generic_consumer_goods
 		#prerequisite = { focus = wuw_HUN_a_revolutionary_greater_hungary }
-		mutually_exclusive = { focus = wuw_HUN_economic_intervention }
+		#mutually_exclusive = { focus = wuw_HUN_economic_intervention }
 		x = 45
 		y = 0
 		relative_position_id = wuw_HUN_end_the_regency
@@ -15055,19 +15057,19 @@ focus_tree = {
 			}
 		}
 
-		offset = {
-			x = -6
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
-			}
-		}
+		#offset = {
+		#	x = -6
+		#	y = 0
+		#	trigger = {
+		#		has_game_rule = {
+		#			rule = obsolete_focus_branches_visibility
+		#			option = HIDE
+		#		}
+		#		has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
+		#	}
+		#}
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -15105,7 +15107,7 @@ focus_tree = {
 		id = wuw_HUN_economic_intervention
 		icon = GFX_goal_generic_demand_territory
 		#prerequisite = { focus = wuw_HUN_a_revolutionary_greater_hungary }
-		mutually_exclusive = { focus = wuw_HUN_avoid_interventionalist_destablilization }
+		#mutually_exclusive = { focus = wuw_HUN_avoid_interventionalist_destablilization }
 		x = 47
 		y = 0
 		relative_position_id = wuw_HUN_end_the_regency
@@ -15266,19 +15268,19 @@ focus_tree = {
 			}
 		}
 
-		offset = {
-			x = -6
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
-			}
-		}
+		#offset = {
+		#	x = -6
+		#	y = 0
+		#	trigger = {
+		#		has_game_rule = {
+		#			rule = obsolete_focus_branches_visibility
+		#			option = HIDE
+		#		}
+		#		has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
+		#	}
+		#}
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -15474,17 +15476,17 @@ focus_tree = {
 			}
 		}
 
-		offset = {
-			x = -6
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
-			}
-		}
+		#offset = {
+		#	x = -6
+		#	y = 0
+		#	trigger = {
+		#		has_game_rule = {
+		#			rule = obsolete_focus_branches_visibility
+		#			option = HIDE
+		#		}
+		#		has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
+		#	}
+		#}
 
 		available = {
 
@@ -17087,12 +17089,12 @@ focus_tree = {
 		id = wuw_HUN_tap_newfound_oil_deposits
 		icon = GFX_goal_generic_oil_refinery
 		prerequisite = { focus = wuw_HUN_expand_the_lignite_industry }
-		mutually_exclusive = { focus = wuw_HUN_hungarian_tradition }
+		#mutually_exclusive = { focus = wuw_HUN_hungarian_tradition }
 		x = 1
 		y = 1
 		relative_position_id = wuw_HUN_expand_the_lignite_industry
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -17262,12 +17264,12 @@ focus_tree = {
 		id = wuw_HUN_hungarian_tradition
 		icon = GFX_focus_HUN_hungarian_tradition
 		prerequisite = { focus = wuw_HUN_expand_the_lignite_industry }
-		mutually_exclusive = { focus = wuw_HUN_tap_newfound_oil_deposits }
+		#mutually_exclusive = { focus = wuw_HUN_tap_newfound_oil_deposits }
 		x = -1
 		y = 1
 		relative_position_id = wuw_HUN_expand_the_lignite_industry
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -17715,14 +17717,14 @@ focus_tree = {
 		id = wuw_HUN_the_mavag_heja
 		icon = GFX_focus_usa_escort_fighters
 		prerequisite = { focus = wuw_HUN_establish_the_mavag_aircraft_factory }
-		mutually_exclusive = { focus = wuw_HUN_develop_laszlo_vargas_design }
+		#mutually_exclusive = { focus = wuw_HUN_develop_laszlo_vargas_design }
 		x = 0
 		y = 1
 		relative_position_id = wuw_HUN_establish_the_mavag_aircraft_factory
 
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -17761,14 +17763,14 @@ focus_tree = {
 		id = wuw_HUN_repulo_muszaki_intezet
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = wuw_HUN_make_the_magyar_legiero_known }
-		mutually_exclusive = { focus = wuw_HUN_joint_air_development }
+		#mutually_exclusive = { focus = wuw_HUN_joint_air_development }
 		x = 1
 		y = 2
 		relative_position_id = wuw_HUN_make_the_magyar_legiero_known
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -17795,14 +17797,14 @@ focus_tree = {
 		id = wuw_HUN_develop_laszlo_vargas_design
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = wuw_HUN_repulo_muszaki_intezet }
-		mutually_exclusive = { focus = wuw_HUN_the_mavag_heja }
+		#mutually_exclusive = { focus = wuw_HUN_the_mavag_heja }
 		x = 0
 		y = 1
 		relative_position_id = wuw_HUN_repulo_muszaki_intezet
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 15
@@ -17902,14 +17904,14 @@ focus_tree = {
 		id = wuw_HUN_joint_air_development
 		icon = GFX_goal_generic_air_production
 		prerequisite = { focus = wuw_HUN_make_the_magyar_legiero_known }
-		mutually_exclusive = { focus = wuw_HUN_repulo_muszaki_intezet }
+		#mutually_exclusive = { focus = wuw_HUN_repulo_muszaki_intezet }
 		x = 4
 		y = 2
 		relative_position_id = wuw_HUN_make_the_magyar_legiero_known
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 15
@@ -18898,14 +18900,14 @@ focus_tree = {
 		id = wuw_HUN_quantity_over_quality
 		icon = GFX_focus_generic_combined_arms
 		prerequisite = { focus = wuw_HUN_doctrinal_studies }
-		mutually_exclusive = { focus = wuw_HUN_expand_the_army }
+		#mutually_exclusive = { focus = wuw_HUN_expand_the_army }
 		x = -1
 		y = 1
 		relative_position_id = wuw_HUN_doctrinal_studies
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 15
@@ -18946,14 +18948,14 @@ focus_tree = {
 		id = wuw_HUN_expand_the_army
 		icon = GFX_focus_HUN_expand_the_army
 		prerequisite = { focus = wuw_HUN_doctrinal_studies }
-		mutually_exclusive = { focus = wuw_HUN_quantity_over_quality }
+		#mutually_exclusive = { focus = wuw_HUN_quantity_over_quality }
 		x = 1
 		y = 1
 		relative_position_id = wuw_HUN_doctrinal_studies
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -20407,14 +20409,14 @@ focus_tree = {
 		id = wuw_HUN_embrace_navy_traditions
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = wuw_HUN_reinstate_the_navy }
-		mutually_exclusive = { focus = wuw_HUN_a_reformed_navy }
+		#mutually_exclusive = { focus = wuw_HUN_a_reformed_navy }
 		x = -1
 		y = 2
 		relative_position_id = wuw_HUN_reinstate_the_navy
 
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -20450,14 +20452,14 @@ focus_tree = {
 		id = wuw_HUN_a_reformed_navy
 		icon = GFX_goal_generic_wolf_pack
 		prerequisite = { focus = wuw_HUN_reinstate_the_navy }
-		mutually_exclusive = { focus = wuw_HUN_embrace_navy_traditions }
+		#mutually_exclusive = { focus = wuw_HUN_embrace_navy_traditions }
 		x = 1
 		y = 2
 		relative_position_id = wuw_HUN_reinstate_the_navy
 
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
