@@ -334,6 +334,7 @@ form_roman_empire_category = {
 			}
 			NOT = {
 				country_exists = YUG
+				country_exists = GRE
 				has_global_flag = form_roman_empire_flag
 			}
 		}
@@ -421,7 +422,10 @@ form_roman_empire_category = {
 			base = 0
 			modifier = {
 				add = 200
-				NOT = { country_exists = YUG }
+				NOT = {
+					country_exists = YUG
+					country_exists = GRE
+				}
 			}
 		}
 	}
@@ -467,7 +471,10 @@ form_roman_empire_category = {
 			base = 0
 			modifier = {
 				add = 200
-				NOT = { country_exists = GRE }
+				NOT = {
+					country_exists = YUG
+					country_exists = GRE
+				}
 			}
 		}
 	}

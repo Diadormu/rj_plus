@@ -13881,6 +13881,7 @@ focus_tree = {
 
 		completion_reward = {
 			SOV = { country_event = DOD_hungary.110 }
+			unlock_decision_tooltip = HUN_unite_hungary_romania_decision
 		}
 	}
 
@@ -14462,7 +14463,7 @@ focus_tree = {
 					}
 				}
 			}
-
+			unlock_decision_tooltip = HUN_unite_hungary_romania_decision
 		}
 	}
 
