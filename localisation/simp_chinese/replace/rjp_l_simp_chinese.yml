@@ -30,6 +30,7 @@
   HUN_unite_ROM: "联合罗马尼亚"
   HUN_form_european_union: "$form_european_union$"
   HUN_closer_EUR_cat: "$BEL_closer_european_union_cat$"
+  unlock_EUR_dec: "计划组建欧盟委员会"
   HUN_invite_to_EUR: "向[FROM.GetNameDef]提议组建欧盟委员会"
   co_netherlands_required_states_tt: "§Y荷兰§!在欧洲的所有地区已由我方控制。"
   co_belgium_required_states_tt: "§Y比利时§!在欧洲的所有地区已由我方控制。"

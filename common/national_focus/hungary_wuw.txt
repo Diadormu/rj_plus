@@ -16982,14 +16982,14 @@ focus_tree = {
 		id = wuw_HUN_expand_the_hungarian_academy_of_sciences
 		icon = GFX_focus_generic_improve_the_administration
 		prerequisite = { focus = wuw_HUN_announce_the_gyor_program }
-		mutually_exclusive = { focus = wuw_HUN_invite_foreign_investors }
+		#mutually_exclusive = { focus = wuw_HUN_invite_foreign_investors }
 		x = 0
 		y = 2
 		relative_position_id = wuw_HUN_announce_the_gyor_program
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 20
@@ -17218,14 +17218,14 @@ focus_tree = {
 		id = wuw_HUN_invite_foreign_investors
 		icon = GFX_goal_generic_intelligence_exchange
 		prerequisite = { focus = wuw_HUN_devalue_the_pengo }
-		mutually_exclusive = { focus = wuw_HUN_expand_the_hungarian_academy_of_sciences }
+		#mutually_exclusive = { focus = wuw_HUN_expand_the_hungarian_academy_of_sciences }
 		x = 0
 		y = 2
 		relative_position_id = wuw_HUN_devalue_the_pengo
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
