@@ -5265,9 +5265,9 @@ focus_tree = {
 				}
 			}
 			
-			hidden_effect = {
-				play_song = "stalin_artillerist_song"
-			}
+			#hidden_effect = {
+			#	play_song = "stalin_artillerist_song"
+			#}
 		}
 	}
 	
@@ -5807,7 +5807,7 @@ focus_tree = {
 			#has_full_control_of_state = 219 #MOSCOW
 			has_equipment = { train_equipment > 119 } #20 trains per factory
 			OR = {
-				threat > 0.75
+				threat > 0.60
 				any_enemy_country = {
 					SOV_is_major_not_original_sov = yes
 					capital_scope = {
@@ -6396,6 +6396,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_move_industry_to_the_urals
 		cost = 5
+		
+		select_effect = {
+			set_country_flag = cjc_can_build_leningrad_stalingrad_defence_flag
+		}
 
 		available = {
 			219 = {
@@ -6528,6 +6532,8 @@ focus_tree = {
 					scope = SOV
 				}
 			}
+			
+			custom_effect_tooltip = cjc_when_focus_selected_effect_tt
 			unlock_decision_tooltip = SOV_build_the_leningrad_defense_line_decision
 			unlock_decision_tooltip = SOV_build_the_stalingrad_defense_line_decision
 			hidden_effect = {
@@ -13963,9 +13969,9 @@ focus_tree = {
 			custom_effect_tooltip = unlock_propaganda_campaign_slot_tt
 			SOV_unlock_propaganda_campaign_slot_effect = yes
 			
-			hidden_effect = {
-				play_song = "A_new_day"
-			}
+			#hidden_effect = {
+			#	play_song = "A_new_day"
+			#}
 		}
 	}
 

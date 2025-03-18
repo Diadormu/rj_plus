@@ -12,5 +12,5 @@ tags={
 	"Gameplay"
 }
 name="日共重置-罗马闪电般归来"
-supported_version="1.15.*"
+supported_version="1.16.*"
 remote_file_id="3278756207"
