@@ -233,7 +233,7 @@ country_event = {
 				}
 			}
 			if = {
-				limit = { has_war_together_with = FROM }
+				limit = { ROOT = { has_war_together_with = FROM } }
 				set_state_controller_to = FROM
 			}
 			else = {

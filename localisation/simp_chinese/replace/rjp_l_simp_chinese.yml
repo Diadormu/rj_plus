@@ -25,6 +25,7 @@
   SOV_returned_PRC_territory: "向[PRC.GetName]归还领土"
   SOV_returned_SWE_territory: "向[SWE.GetName]归还领土"
   VIN_returned_SIA_territory: "向[SIA.GetName]归还领土"
+  PRC_get_core: "收回争议领土"
   player_leader_faction: "玩家领导阵营（非必要慎用）"
 
   HUN_unite_ROM: "联合罗马尼亚"

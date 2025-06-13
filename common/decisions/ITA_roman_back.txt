@@ -13,10 +13,7 @@ form_roman_empire_category = {
 				rule = cjc_new_axis_rule
 				option = cjc_new_axis_established_rule
 			}
-			NOT = {
-				country_exists = FRA
-				has_global_flag = form_roman_empire_flag
-			}
+			NOT = { has_global_flag = form_roman_empire_flag }
 			AND = {
 				is_in_faction_with = GER
 				is_in_faction_with = ENG
@@ -30,6 +27,13 @@ form_roman_empire_category = {
 
 		available = {
 			is_subject = no
+			FRA = {
+				OR = {
+					exists = no
+					is_subject_of = GER
+					is_subject_of = ENG
+				}
+			}
 			NOT = {
 				has_completed_focus = ITA_mare_nostrum_bba
 				has_completed_focus = ITA_the_catholic_dominion
@@ -489,7 +493,7 @@ eng_ai_common_functions = {
 				rule = cjc_new_axis_rule
 				option = cjc_new_axis_established_rule
 			}
-			NOT = { country_exists = FRA }
+			#NOT = { country_exists = FRA }
 			AND = {
 				is_in_faction_with = GER
 				is_in_faction_with = ITA
@@ -502,7 +506,7 @@ eng_ai_common_functions = {
 				rule = cjc_new_axis_rule
 				option = cjc_new_axis_established_rule
 			}
-			NOT = { country_exists = FRA }
+			#NOT = { country_exists = FRA }
 			AND = {
 				is_in_faction_with = GER
 				is_in_faction_with = ITA
@@ -521,6 +525,35 @@ eng_ai_common_functions = {
 		complete_effect = {
 			IRE = { delete_unit = { disband = yes } }
 			119 = { transfer_state_to = ENG }
+		}
+
+		ai_will_do = { base = 200 }
+	}
+}
+
+form_nation_mod_category = {
+	chl_over_civi = {
+		icon = GFX_decision_generic_prepare_civil_war
+		allowed = { tag = CHL }
+		visible = {
+			is_ai = yes
+			has_civil_war = yes
+		}
+		available = {
+			any_country = {
+				has_war_with = ROOT
+				original_tag = CHL
+				has_army_manpower = { size > 0 }
+			}
+		}
+		complete_effect = {
+			random_country = {
+				limit = {
+					has_war_with = ROOT
+					original_tag = CHL
+				}
+				delete_unit = { disband = yes }
+			}
 		}
 
 		ai_will_do = { base = 200 }
@@ -549,6 +582,30 @@ Ger_babarosa_attack = {
 		days_remove = 28
 		remove_effect = {
 			complete_national_focus = GER_operation_weserubung
+		}
+		ai_will_do = { base = 200}
+	}
+	ger_f_GER_around_maginot = {
+		icon = generic_independence
+		allowed = { original_tag = GER }
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			AND = {
+				is_in_faction_with = ENG
+				is_in_faction_with = ITA
+			}
+			is_ai = yes
+		}
+		available = {
+			has_completed_focus = GER_operation_weserubung
+		}
+		fire_only_once = yes
+		days_remove = 28
+		remove_effect = {
+			complete_national_focus = GER_around_maginot
 		}
 		ai_will_do = { base = 200}
 	}
