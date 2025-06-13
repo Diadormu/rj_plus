@@ -2298,7 +2298,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = SOV_transpolar_flights
-		cost = 10
+		cost = 5
 
 		available = {
 			any_owned_state = {
@@ -2536,7 +2536,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SOV_transpolar_flights
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -5646,6 +5646,9 @@ focus_tree = {
 			add_to_variable = { SOV_the_red_army_mobilization_speed = 0.05 }
 			add_to_variable = { SOV_the_red_army_conscription_factor = 0.03 }
 			custom_effect_tooltip = SOV_strengthen_the_mobilization_plan_ns_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = SOV_retreat_manpower_to_back_preperation_decision
+			set_country_flag = SOV_retreat_manpower_to_back_decision_on_flag
 		}
 	}
 
@@ -7383,7 +7386,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_otechestvennaya_voyna_2
-		cost = 3
+		cost = 2
 
 		available = {
 			has_war_with = GER
@@ -7796,7 +7799,9 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SOV_the_red_army_special_forces_cap = 0.1 }
 			add_to_variable = { SOV_the_red_army_land_doctrine_cost_factor = -0.1 }
-			custom_effect_tooltip = SOV_the_glory_of_the_red_army_ns_tt
+			add_to_variable = { SOV_the_red_army_max_command_power_mult = 0.1 }
+			add_to_variable = { SOV_the_red_army_conscription_factor = 0.05 }
+			custom_effect_tooltip = SOV_the_glory_of_the_red_army_ns_CSR_tt
 
 			army_experience = 75
 
@@ -7811,7 +7816,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_breakthrough_progress = {
 				specialization = specialization_land
-				value = 0.25
+				value = 0.50
 			}
 		}
 	}
@@ -8990,7 +8995,7 @@ focus_tree = {
 			add_to_variable = { SOV_the_politburo_max_surrender_limit_offset = 0.05 }
 			custom_effect_tooltip = SOV_the_workers_dictatorship_ns_tt
 
-			add_political_power = 50
+			add_political_power = 70
 
 			SOV_paranoia_low_decrease_effect = yes
 		}
@@ -10319,7 +10324,7 @@ focus_tree = {
 		icon = GFX_focus_ger_great_red_menace
 		prerequisite = { focus = SOV_freedom_of_debate_unity_of_action }
 		x = 0
-		y = 2
+		y = 3
 		relative_position_id = SOV_freedom_of_debate_unity_of_action
 		cost = 5
 
@@ -10693,7 +10698,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = SOV_the_fourth_international
-		cost = 10
+		cost = 5
 
 		available = {
 		}
@@ -11067,7 +11072,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = SOV_left_opposition_coup
-		cost = 10
+		cost = 5
 
 		available = {
 			has_global_flag = SOV_soviet_civil_war_over
@@ -11228,7 +11233,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_the_builder_of_the_red_army
 		
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -12127,7 +12132,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = SOV_dissent_in_the_party
-		cost = 10
+		cost = 5
 		available = {
 			SOV_soviet_civil_war_not_started = yes 
 		}
@@ -12228,7 +12233,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = SOV_coup_detat
-		cost = 10
+		cost = 5
 		available = {
 		}
 		                
@@ -12442,7 +12447,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_back_to_the_nep
-		cost = 10
+		cost = 5
 		available = {
 		}
 		                
@@ -13310,7 +13315,7 @@ focus_tree = {
 		x = 0
 		y = 4
 		relative_position_id = SOV_cooperation_against_stalin
-		cost = 10
+		cost = 5
 		available = {
 			has_global_flag = SOV_soviet_civil_war_over
 		}
