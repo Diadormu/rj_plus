@@ -1,0 +1,75 @@
+GER_axis_we_shall_finish_IRE = {
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+			original_tag = ENG
+		}
+	}
+	enable = { has_war_with = IRE }
+	#abort_when_not_enabled = yes
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = IRE
+		value = 100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = IRE
+		value = 100
+	}
+	ai_strategy = {
+		type = front_control
+		tag = IRE
+		ratio = 0.25
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = IRE
+		value = 60
+	}
+}
+
+GER_axis_we_shall_finish_NOR = {
+	allowed = {
+		OR = {
+			original_tag = GER
+			original_tag = ITA
+			original_tag = ENG
+		}
+	}
+	enable = { has_war_with = NOR }
+	#abort_when_not_enabled = yes
+	ai_strategy = {
+		type = invade
+		id = NOR
+		value = 100
+	}
+	ai_strategy = {
+		type = invasion_unit_request
+		tag = NOR
+		value = 100
+	}
+	ai_strategy = {
+		type = front_control
+		tag = NOR
+		ratio = 0.25
+		priority = 100
+		ordertype = front
+		execution_type = rush
+		execute_order = yes
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = NOR
+		value = 60
+	}
+}

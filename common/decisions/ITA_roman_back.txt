@@ -493,6 +493,7 @@ eng_ai_common_functions = {
 				rule = cjc_new_axis_rule
 				option = cjc_new_axis_established_rule
 			}
+			is_ai = yes
 			#NOT = { country_exists = FRA }
 			AND = {
 				is_in_faction_with = GER
@@ -516,11 +517,7 @@ eng_ai_common_functions = {
 				is_ai = yes
 				controls_state = 119
 				has_army_manpower = { size > 0 }
-				is_in_faction_with = YUG
-				is_in_faction_with = GRE
 			}
-			YUG = { has_capitulated = yes }
-			GRE = { has_capitulated = yes }
 		}
 		complete_effect = {
 			IRE = { delete_unit = { disband = yes } }
@@ -561,6 +558,47 @@ form_nation_mod_category = {
 }
 
 Ger_babarosa_attack = {
+	ger_end_nor = {
+		icon = generic_independence
+		allowed = { original_tag = GER }
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			is_ai = yes
+			AND = {
+				is_in_faction_with = ENG
+				is_in_faction_with = ITA
+			}
+			has_war_with = NOR
+		}
+
+		available = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			AND = {
+				is_in_faction_with = ENG
+				is_in_faction_with = ITA
+			}
+			has_war_with = NOR
+			NOR = {
+				is_major = yes
+				is_ai = yes
+				all_allied_country = { has_capitulated = yes }
+			}
+		}
+		complete_effect = {
+			NOR = {
+				every_core_state = { set_state_controller_to = GER }
+				delete_unit = { disband = yes }
+			}
+		}
+
+		ai_will_do = { base = 200 }
+	}
 	ger_f_GER_operation_weserubung = {
 		icon = generic_independence
 		allowed = { original_tag = GER }
