@@ -188,10 +188,16 @@ form_roman_empire_category = {
 			676 = { add_claim_by = ITA } #Mosul
 			680 = { add_claim_by = ITA } #Deir-az-Zur
 			350 = { add_claim_by = ITA } #Diyarbakir
+			1010 = { add_claim_by = ITA } #Al-Anbar
+			1011 = { add_claim_by = ITA } #Al-Basrah
 
 			if = {
 				limit = { is_ai = yes }
 				add_political_power = 185
+				if = {
+					limit = { has_completed_focus = ITA_italian_irredentism }
+					complete_national_focus = ITA_war_with_greece
+				}
 			}
 			if = {
 				limit = { is_ai = no }
@@ -217,7 +223,7 @@ form_roman_empire_category = {
 			base = 0
 			modifier = {
 				add = 200
-				has_war_with = GRE
+				has_war_with = YUG
 			}
 		}
 	}
@@ -525,6 +531,75 @@ eng_ai_common_functions = {
 		}
 
 		ai_will_do = { base = 200 }
+	}
+}
+eng_common_functions_cat = {
+	eng_fra_un = {
+		icon = generic_independence
+		allowed = { original_tag = ENG }
+		visible = {
+			has_country_flag = cjc_british_france_established_flag
+		}
+		available = {
+			all_state = {
+				OR = {
+					is_core_of = FRA
+					is_core_of = IRE
+					is_core_of = BEL
+					is_core_of = HOL
+					is_core_of = LUX
+					is_core_of = CZE
+					is_core_of = YUG
+				}
+				is_owned_by_ROOT_or_ally = yes
+			}
+		}
+		fire_only_once = yes
+		days_remove = 35
+		remove_effect = {
+			hidden_effect = {
+				FRA = { delete_unit = { disband = yes } }
+				HOL = { delete_unit = { disband = yes } }
+			}
+			ENG = {
+				annex_country = {
+					target = FRA
+					transfer_troops = yes
+				}
+			}
+			GER = {
+				annex_country = {
+					target = HOL
+					transfer_troops = yes
+				}
+			}
+			ITA = {
+				transfer_state = 1
+				transfer_state = 735
+				transfer_state = 851
+				transfer_state = 21
+				transfer_state = 22
+				transfer_state = 31
+			}
+			HUN = {
+				if = {
+					limit = {
+						ROM = { exists = no }
+						all_state = {
+							is_core_of = ROM
+							is_owned_by_ROOT_or_ally = yes
+						}
+					}
+				}
+				else_if = {
+					limit = { is_in_faction_with = ROM }
+				}
+			}
+			if = {
+				limit = { is_in_faction_with = BUL }
+				BUL = {}
+			}
+		}
 	}
 }
 

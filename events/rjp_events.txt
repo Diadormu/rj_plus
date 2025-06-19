@@ -12,7 +12,12 @@ country_event = {
 		name = cjp.3001.a
 		every_state = {
 			limit = {
-				is_owned_by = ENG
+				owner = {
+					OR = {
+						tag = ENG
+						is_subject_of = ENG
+					}
+				}
 				is_claimed_by = ITA
 			}
 			transfer_state_to = ITA
