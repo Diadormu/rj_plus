@@ -22,7 +22,7 @@ country_event = {
 			}
 			transfer_state_to = ITA
 		}
-		ENG = { annex_country = { target = AOI } }
+		AOI = { puppet = ENG }
 		add_political_power = 35
 
 		ai_chance = {

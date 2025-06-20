@@ -466,3 +466,37 @@ form_PORe_category = {
 		ai_will_do = { factor = 200 }
 	}
 }
+
+form_nation_mod_category = {
+	chl_over_civi = {
+		icon = GFX_decision_generic_prepare_civil_war
+		allowed = {
+			OR = {
+				tag = AFG
+				tag = CHL
+			}
+		}
+		visible = {
+			is_ai = yes
+			has_civil_war = yes
+		}
+		available = {
+			any_country = {
+				has_war_with = ROOT
+				original_tag = ROOT
+				has_army_manpower = { size > 0 }
+			}
+		}
+		complete_effect = {
+			random_country = {
+				limit = {
+					has_war_with = ROOT
+					original_tag = ROOT
+				}
+				delete_unit = { disband = yes }
+			}
+		}
+
+		ai_will_do = { base = 200 }
+	}
+}

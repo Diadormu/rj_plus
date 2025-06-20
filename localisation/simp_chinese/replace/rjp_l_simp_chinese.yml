@@ -26,6 +26,8 @@
   demand_TUR_required_states: "向土耳其索取宣称"
 
   eng_fra_un: "重划势力范围"
+  FRA_UK_neutrality: "安茹帝国"
+  FRA_UK_neutrality_DEF: "大不列颠及法兰西联合帝国"
 
   SOV_returned_PRC_territory: "向[PRC.GetName]归还领土"
   SOV_returned_SWE_territory: "向[SWE.GetName]归还领土"
