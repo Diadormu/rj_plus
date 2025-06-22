@@ -3,7 +3,7 @@
 ### 本mod可视为日共重置与"[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3272731734]可成立国家优化[/url]"和"[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3272732343]解互斥plus[/url]"的兼容补丁
 
 - [x] 在小协约国崩溃后为意大利添加一系列决议加速罗马成立；
-- [ ] 允许不列颠吞并法兰西傀儡成立安茹帝国；
+- [x] 允许不列颠吞并法兰西傀儡成立安茹帝国；
 - [x] 为AI带英添加了一个决议用于解决被爱尔兰推下海导致一直无法结束战争的问题；
 - [x] 为AI德国添加了一个解锁威瑟堡行动国策的决议；
 - [x] 允许玩家领导轴心国或共产国际；

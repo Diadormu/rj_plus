@@ -12,12 +12,43 @@ country_event = {
 		name = cjp.3001.a
 		every_state = {
 			limit = {
-				is_owned_by = ENG
+				owner = {
+					OR = {
+						tag = ENG
+						is_subject_of = ENG
+					}
+				}
+				NOT = {
+					state = 268
+					state = 269
+				}
 				is_claimed_by = ITA
 			}
 			transfer_state_to = ITA
 		}
-		ENG = { annex_country = { target = AOI } }
+		ENG = {
+			puppet = AOI
+			if = {
+				limit = { 268 = { owner = { OR = {
+						tag = ENG
+						is_subject_of = ENG
+					}}}}
+				268 = { transfer_state_to = AOI }
+			}
+			if = {
+				limit = { 269 = { owner = { OR = {
+						tag = ENG
+						is_subject_of = ENG
+					}}}}
+				269 = { transfer_state_to = AOI }
+			}
+			if = {
+				limit = { owner = { OR = {
+						tag = ENG
+						is_subject_of = ENG
+					}}}}
+				906 = { transfer_state_to = AOI }
+			}
 		add_political_power = 35
 
 		ai_chance = {

@@ -7,7 +7,7 @@ GER_axis_we_shall_finish_IRE = {
 		}
 	}
 	enable = { has_war_with = IRE }
-	#abort_when_not_enabled = yes
+	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = naval_invasion_focus
 		value = 100
@@ -47,7 +47,7 @@ GER_axis_we_shall_finish_NOR = {
 		}
 	}
 	enable = { has_war_with = NOR }
-	#abort_when_not_enabled = yes
+	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = invade
 		id = NOR

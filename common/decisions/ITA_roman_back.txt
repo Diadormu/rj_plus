@@ -62,7 +62,7 @@ form_roman_empire_category = {
 				controls_state = 159
 			}
 		}
-		days_remove = 70
+		days_remove = 35
 		remove_effect = {
 			add_political_power = -70
 			complete_national_focus = ITA_mare_nostrum_bba
@@ -188,10 +188,17 @@ form_roman_empire_category = {
 			676 = { add_claim_by = ITA } #Mosul
 			680 = { add_claim_by = ITA } #Deir-az-Zur
 			350 = { add_claim_by = ITA } #Diyarbakir
+			1010 = { add_claim_by = ITA } #Al-Anbar
+			1011 = { add_claim_by = ITA } #Al-Basrah
 
 			if = {
 				limit = { is_ai = yes }
-				add_political_power = 185
+				add_political_power = 150
+				if = {
+					limit = { has_completed_focus = ITA_pact_of_steel }
+					complete_national_focus = ITA_italian_irredentism
+					complete_national_focus = ITA_war_with_greece
+				}
 			}
 			if = {
 				limit = { is_ai = no }
@@ -217,7 +224,7 @@ form_roman_empire_category = {
 			base = 0
 			modifier = {
 				add = 200
-				has_war_with = GRE
+				has_war_with = YUG
 			}
 		}
 	}
@@ -527,29 +534,165 @@ eng_ai_common_functions = {
 		ai_will_do = { base = 200 }
 	}
 }
-
-form_nation_mod_category = {
-	chl_over_civi = {
-		icon = GFX_decision_generic_prepare_civil_war
-		allowed = { tag = CHL }
+eng_common_functions_cat = {
+	eng_fra_un = {
+		icon = generic_independence
+		allowed = { original_tag = ENG }
 		visible = {
-			is_ai = yes
-			has_civil_war = yes
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			AND = {
+				is_in_faction_with = GER
+				is_in_faction_with = ITA
+			}
+			has_country_flag = cjc_british_france_established_flag
 		}
 		available = {
-			any_country = {
-				has_war_with = ROOT
-				original_tag = CHL
-				has_army_manpower = { size > 0 }
-			}
+			FRA = { all_core_state = { is_owned_by_ROOT_or_ally = yes } }
+			IRE = { all_core_state = { is_owned_by_ROOT_or_ally = yes } }
+			BEL = { all_core_state = { is_owned_by_ROOT_or_ally = yes } }
+			HOL = { all_core_state = { is_owned_by_ROOT_or_ally = yes } }
+			LUX = { all_core_state = { is_owned_by_ROOT_or_ally = yes } }
+			CZE = { all_core_state = { is_owned_by_ROOT_or_ally = yes } }
+			YUG = { all_core_state = { is_owned_by_ROOT_or_ally = yes } }
+			NOR = { all_core_state = { is_owned_by_ROOT_or_ally = yes } }
 		}
-		complete_effect = {
-			random_country = {
-				limit = {
-					has_war_with = ROOT
-					original_tag = CHL
+		fire_only_once = yes
+		days_remove = 7
+		remove_effect = {
+			hidden_effect = {
+				FRA = { delete_unit = { disband = yes } }
+				HOL = { delete_unit = { disband = yes } }
+				ENG = { annex_country = {
+					target = HOL
+					transfer_troops = yes
+				}}
+			}
+			ENG = {
+				annex_country = {
+					target = FRA
+					transfer_troops = yes
 				}
-				delete_unit = { disband = yes }
+				every_state = {
+					limit = { is_core_of = FRA }
+					add_core_of = ENG
+				}
+				set_cosmetic_tag = FRA_UK
+				hidden_effect = { set_global_flag = form_france_british }
+				add_victory_points = {
+					province = 6103
+					value = 50
+				}
+				if = {
+					limit = {
+						COG = {
+							OR= {
+								exists = no
+								is_subject = yes
+							}
+							all_core_state = { is_owned_by_ROOT_or_ally = yes }
+						}
+					}
+					every_state = {
+						limit = {
+							OR = {
+								state = 768
+								state = 769
+								is_core_of = COG
+							}
+						}
+						transfer_state_to = COG
+					}
+					ENG = { puppet = COG }
+				}
+			}
+			GER = {
+				transfer_state = 7
+				transfer_state = 35
+				transfer_state = 36
+				transfer_state = 6
+				transfer_state = 34
+				transfer_state = 977
+				transfer_state = 980
+				transfer_state = 29
+				transfer_state = 8
+				transfer_state = 28
+				if = {
+					limit = { NOR = { exists = yes } }
+					NOR = { delete_unit = { disband = yes } }
+					annex_country = {
+						target = NOR
+						transfer_troops = yes
+					}
+				}
+				transfer_state = 110
+				transfer_state = 142
+				transfer_state = 143
+				transfer_state = 144
+				transfer_state = 920
+				transfer_state = 921
+				transfer_state = 922
+				transfer_state = 923
+				transfer_state = 924
+				transfer_state = 925
+			}
+			ITA = {
+				transfer_state = 1
+				transfer_state = 735
+				transfer_state = 851
+				transfer_state = 21
+				transfer_state = 22
+				transfer_state = 31
+				transfer_state = 802
+				transfer_state = 970
+			}
+			HUN = {
+				if = {
+					limit = {
+						CZE = {
+							OR= {
+								exists = no
+								is_subject = yes
+							}
+							all_core_state = { is_owned_by_ROOT_or_ally = yes }
+						}
+					}
+					transfer_state = 664
+				}
+				transfer_state = 45
+				transfer_state = 764
+			}
+			BUL = {
+				transfer_state = 803
+				transfer_state = 106
+			}
+			if = {
+				limit = {
+					ROM = {
+						OR= {
+							exists = no
+							is_subject = yes
+						}
+						all_core_state = { is_owned_by_ROOT_or_ally = yes }
+					}
+				}
+				HUN = {
+					transfer_state = 76
+					transfer_state = 82
+					transfer_state = 83
+					transfer_state = 84
+				}
+				BUL = { transfer_state = 77 }
+			}
+			if = {
+				limit = { is_in_faction_with = CRO }
+				CRO = { delete_unit = { disband = yes } }
+				GER = { annex_country = {
+					target = CRO
+					transfer_troops = yes
+				}}
 			}
 		}
 
@@ -587,14 +730,22 @@ Ger_babarosa_attack = {
 			NOR = {
 				is_major = yes
 				is_ai = yes
+				OR = {
+					GRE = { OR= {
+						exists = no
+						is_subject = yes
+					}}
+					is_in_faction_with = GRE
+				}
 				all_allied_country = { has_capitulated = yes }
 			}
 		}
 		complete_effect = {
 			NOR = {
-				every_core_state = { set_state_controller_to = GER }
 				delete_unit = { disband = yes }
+				every_core_state = { set_state_controller_to = GER }
 			}
+			914 = { transfer_state_to = GER }
 		}
 
 		ai_will_do = { base = 200 }
@@ -612,6 +763,7 @@ Ger_babarosa_attack = {
 				is_in_faction_with = ITA
 			}
 			is_ai = yes
+			NOT = { has_completed_focus = GER_operation_weserubung }
 		}
 		available = {
 			has_completed_focus = GER_danzig_or_war
@@ -636,6 +788,7 @@ Ger_babarosa_attack = {
 				is_in_faction_with = ITA
 			}
 			is_ai = yes
+			NOT = { has_completed_focus = GER_around_maginot }
 		}
 		available = {
 			has_completed_focus = GER_operation_weserubung
@@ -644,6 +797,80 @@ Ger_babarosa_attack = {
 		days_remove = 28
 		remove_effect = {
 			complete_national_focus = GER_around_maginot
+		}
+		ai_will_do = { base = 200}
+	}
+	ger_pup_rom = {
+		icon = generic_independence
+		allowed = { original_tag = GER }
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			AND = {
+				is_in_faction_with = ENG
+				is_in_faction_with = ITA
+			}
+			is_ai = yes
+		}
+		available = {
+			ROM = {
+				exists = no
+				all_core_state = { is_owned_by_ROOT_or_ally = yes }
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			every_state = {
+				limit = { is_core_of = ROM }
+				transfer_state_to = ROM
+			}
+			puppet = ROM
+		}
+		ai_will_do = { base = 200}
+	}
+}
+
+USA_cjc_functions = {
+	usa_not_join_eur_war = {
+		icon = generic_independence
+		allowed = { original_tag = USA }
+		visible = {
+			is_ai = yes
+			OR = {
+				GER = {
+					OR = {
+						has_war_with = FRA
+						has_war_with = YUG
+						has_war_with = NOR
+					}
+				}
+				ITA = { has_war_with = GRE }
+			}
+		}
+		available = {
+			threat > 0.90
+		}
+		days_remove = -1
+		modifier = { ai_get_ally_desire_factor = -1000 }
+		cancel_trigger = {
+			YUG = { OR= {
+					exists = no
+					is_subject = yes
+				}}
+			NOR = { OR= {
+					exists = no
+					is_subject = yes
+				}}
+			GRE = { OR= {
+					exists = no
+					is_subject = yes
+				}}
+			#OR = {
+			#	GER = { has_war = no }
+			#	ITA = { has_war = no }
+			#}
 		}
 		ai_will_do = { base = 200}
 	}

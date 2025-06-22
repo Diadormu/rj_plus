@@ -1,0 +1,52 @@
+on_actions = {
+	on_capitulation_immediate = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = form_france_british
+					original_tag = ENG
+				}
+				if = {
+					limit = {
+						has_cosmetic_tag = FRA_UK
+					}
+					drop_cosmetic_tag = yes
+				}
+				every_state = {
+					limit = {
+						is_core_of = ENG
+						is_core_of = FRA
+					}
+					remove_core_of = ENG
+				}
+				clr_global_flag = form_france_british
+			}
+		}
+	}
+	on_peaceconference_started = {
+		effect = {
+			FROM = {
+				if = {
+					limit = {
+						has_global_flag = form_france_british
+						original_tag = ENG
+					}
+					if = {
+						limit = {
+							has_cosmetic_tag = FRA_UK
+						}
+						drop_cosmetic_tag = yes
+					}
+					every_state = {
+						limit = {
+							is_core_of = ENG
+							is_core_of = FRA
+						}
+						remove_core_of = ENG
+					}
+					clr_global_flag = form_france_british
+				}
+			}
+		}
+	}
+}

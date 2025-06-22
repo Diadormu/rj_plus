@@ -1,4 +1,8 @@
 ﻿l_simp_chinese:
+  is_owned_by_ROOT_or_ally: "由§Y[ROOT.GetFlag][ROOT.GetNameDef]§!或§Y盟友§!拥有\n"
+  is_owned_by_ROOT_or_ally_NOT: "未由§Y[ROOT.GetFlag][ROOT.GetNameDef]§!或§Y盟友§!拥有\n"
+  usa_not_join_eur_war: "$cjc_idea_ai_dislike_factions$"
+
   form_nostro_mare: "我们的海！"
   claim_albania_required_states_tt: "获得§Y阿尔巴尼亚§!所有地区的宣称。"
   claim_YUG_required_states_tt: "获得§Y卢布尔雅那§!、§Y达尔马提亚§!、§Y波斯尼亚§!、§Y黑塞哥维那§!及§Y黑山§!所有地区的宣称"
@@ -21,6 +25,11 @@
   cjp.3002.a: "我们惹不起他们"
   cjp.3002.b: "有本事就来拿"
   demand_TUR_required_states: "向土耳其索取宣称"
+
+  eng_fra_un: "重划势力范围"
+  FRA_UK: "安茹"
+  FRA_UK_neutrality: "安茹帝国"
+  FRA_UK_neutrality_DEF: "大不列颠及法兰西联合帝国"
 
   SOV_returned_PRC_territory: "向[PRC.GetName]归还领土"
   SOV_returned_SWE_territory: "向[SWE.GetName]归还领土"

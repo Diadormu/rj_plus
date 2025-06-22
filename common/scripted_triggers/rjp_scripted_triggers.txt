@@ -1,0 +1,11 @@
+is_owned_by_ROOT_or_ally = {
+	custom_trigger_tooltip = {
+		tooltip = is_owned_by_ROOT_or_ally
+		owner = {
+			OR = {
+				tag = ROOT
+				is_in_faction_with = ROOT
+			}
+		}
+	}
+}
