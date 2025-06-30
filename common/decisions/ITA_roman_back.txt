@@ -670,19 +670,29 @@ eng_common_functions_cat = {
 			}
 			if = {
 				limit = {
-					ROM = {
-						OR= {
+					ROM = { OR= {
 							exists = no
 							is_subject = yes
-						}
-						all_core_state = { is_owned_by_ROOT_or_ally = yes }
-					}
+						}}
+					76 = { is_owned_by_ROOT_or_ally = yes }
+					82 = { is_owned_by_ROOT_or_ally = yes }
+					83 = { is_owned_by_ROOT_or_ally = yes }
+					84 = { is_owned_by_ROOT_or_ally = yes }
 				}
 				HUN = {
 					transfer_state = 76
 					transfer_state = 82
 					transfer_state = 83
 					transfer_state = 84
+				}
+			}
+			if = {
+				limit = {
+					ROM = { OR= {
+							exists = no
+							is_subject = yes
+						}}
+					77 = { is_owned_by_ROOT_or_ally = yes }
 				}
 				BUL = { transfer_state = 77 }
 			}
@@ -817,13 +827,16 @@ Ger_babarosa_attack = {
 		available = {
 			ROM = {
 				exists = no
-				all_core_state = { is_owned_by_ROOT_or_ally = yes }
+				any_core_state = { is_owned_by_ROOT_or_ally = yes }
 			}
 		}
 		fire_only_once = yes
 		complete_effect = {
 			every_state = {
-				limit = { is_core_of = ROM }
+				limit = {
+					is_core_of = ROM
+					is_owned_by_ROOT_or_ally = yes
+				}
 				transfer_state_to = ROM
 			}
 			puppet = ROM
