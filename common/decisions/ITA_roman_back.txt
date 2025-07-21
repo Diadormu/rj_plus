@@ -844,8 +844,25 @@ Ger_babarosa_attack = {
 		ai_will_do = { base = 200}
 	}
 }
+ROM_change_sides = {
+	rom_guarantee_cze = {
+		icon = generic_independence
+		allowed = { original_tag = ROM }
+		visible = {
+			is_ai = yes
+			is_guaranteed_by = FRA
+		}
+		available = {
+			is_subject = no
+			NOT = { has_guaranteed = CZE }
+		}
+		complete_effect = { give_guarantee = CZE }
 
-USA_cjc_functions = {
+		ai_will_do = { base = 200 }
+	}
+}
+
+usa_ai_common_functions = {
 	usa_not_join_eur_war = {
 		icon = generic_independence
 		allowed = { original_tag = USA }

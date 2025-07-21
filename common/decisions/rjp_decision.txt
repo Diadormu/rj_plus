@@ -487,14 +487,48 @@ form_nation_mod_category = {
 				has_army_manpower = { size > 0 }
 			}
 		}
+
 		complete_effect = {
 			random_country = {
 				limit = {
+					is_ai = yes
 					has_war_with = ROOT
 					original_tag = ROOT
 				}
 				delete_unit = { disband = yes }
 			}
+			if = {
+				limit = {
+					tag = CHL
+					has_game_rule = {
+						rule = cjc_merge_countries_rule
+						option = cjc_merge_countries_rule_on
+					}
+				}
+				annex_country = { target = PRU }
+			}
+		}
+
+		ai_will_do = { base = 200 }
+	}
+
+	chl_annex_arg = {
+		icon = GFX_decision_generic_prepare_civil_war
+		allowed = { tag = CHL }
+		visible = {
+			is_ai = yes
+			has_completed_focus = { CHL_taking_back_patagonia }
+			has_war_with = ARG
+		}
+		available = {
+			ARG = {
+				is_ai = yes
+				has_army_manpower = { size > 0 }
+			}
+		}
+
+		complete_effect = {
+			ARG = { delete_unit = { disband = yes } }
 		}
 
 		ai_will_do = { base = 200 }
