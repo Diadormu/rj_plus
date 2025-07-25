@@ -49,6 +49,10 @@ country_event = {
 					}}}}
 				906 = { transfer_state_to = AOI }
 			}
+		ITA = {
+			annex_country = { target = PAL }
+			annex_country = { target = JOR }
+		}
 		add_political_power = 35
 
 		ai_chance = {

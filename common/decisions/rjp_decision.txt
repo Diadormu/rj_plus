@@ -517,7 +517,7 @@ form_nation_mod_category = {
 		allowed = { tag = CHL }
 		visible = {
 			is_ai = yes
-			has_completed_focus = { CHL_taking_back_patagonia }
+			has_completed_focus = CHL_taking_back_patagonia
 			has_war_with = ARG
 		}
 		available = {
@@ -531,6 +531,39 @@ form_nation_mod_category = {
 			ARG = { delete_unit = { disband = yes } }
 		}
 
+		ai_will_do = { base = 200 }
+	}
+
+	chl_get_core_from_subject = {
+		icon = generic_form_nation
+		allowed = { tag = CHL }
+		visible = {
+			is_ai = yes
+			has_global_flag = peru_bolivia_revived_flag
+		}
+		available = {
+		}
+		fire_only_once = yes
+		complete_effect = {
+			every_state = {
+				limit = {
+					controller = {
+						OR = {
+							AND = {
+								original_tag = BOL
+								is_subject_of = ROOT
+							}
+							AND = {
+								original_tag = PRU
+								is_subject_of = ROOT
+							}
+						}
+					}
+					is_core_of = ROOT
+				}
+				transfer_state_to = ROOT
+			}
+		}
 		ai_will_do = { base = 200 }
 	}
 }

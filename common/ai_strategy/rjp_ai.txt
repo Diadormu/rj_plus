@@ -73,3 +73,44 @@ GER_axis_we_shall_finish_NOR = {
 		value = 60
 	}
 }
+
+ITA_declare_war_GRE = {
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		has_completed_focus = ITA_war_with_greece
+		country_exists = GRE
+	}
+	abort = {
+		NOT = {
+			country_exists = GRE
+		}
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = GRE
+		value = 2000
+	}
+}
+ITA_declare_war_TUR = {
+	allowed = {
+		original_tag = ITA
+	}
+	enable = {
+		has_completed_focus = ITA_mare_nostrum_bba
+		country_exists = TUR
+	}
+	abort = {
+		NOT = {
+			country_exists = TUR
+		}
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = TUR
+		value = 2000
+	}
+}
