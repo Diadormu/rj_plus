@@ -1557,6 +1557,8 @@ focus_tree = {
 			hidden_effect = {
 				add_ideas = SOV_national_specialists_ns
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = SOV_reeducate_workers_skill_decision
 		}
 	}
 
@@ -1581,6 +1583,8 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = SOV_gosproyektstroy_1
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = SOV_reeducate_workers_skill_decision
 		}
 	}
 
@@ -1979,7 +1983,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_eastern_development
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -2452,7 +2456,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SOV_merge_aircraft_plants
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -2484,7 +2488,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = SOV_expand_the_aircraft_industry
-		cost = 10
+		cost = 5
 
 		mutually_exclusive = { focus = SOV_intensify_pilot_training_program }
 
@@ -2683,7 +2687,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = SOV_foster_flying_clubs
-		cost = 10
+		cost = 5
 
 		mutually_exclusive = { focus = SOV_increase_aircraft_production }
 
@@ -3554,7 +3558,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = SOV_pc_of_the_ussr_navy
-		cost = 10
+		cost = 5
 
 		mutually_exclusive = { focus = SOV_submarine_warfare }
 
@@ -3603,7 +3607,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SOV_pc_of_the_ussr_navy
-		cost = 10
+		cost = 5
 
 		mutually_exclusive = { focus = SOV_surface_warfare }
 
@@ -3697,7 +3701,6 @@ focus_tree = {
 				bonus = 1.0
 				uses = 1
 				category = ca_tech
-				category = cl_tech
 			}
 
 			#Kronshtadt Class Battlecruiser
@@ -4681,17 +4684,17 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_pc_of_mechanical_engineering
-		cost = 10
+		cost = 5
 
 		available = {
 			if = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
-				has_tech = improved_medium_tank_chassis
+				has_tech = basic_medium_tank_chassis
 			}
 			else = {
-				has_tech = improved_medium_tank
+				has_tech = basic_medium_tank
 			}
 		}
 		
@@ -4703,7 +4706,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = SOV_superior_war_machines
-				bonus = 1.0
+				bonus = 0.75
 				uses = 2
 				category = armor
 			}
@@ -7266,8 +7269,13 @@ focus_tree = {
 			add_to_variable = { SOV_the_red_army_army_org_factor = 0.05 }
 			set_variable = { SOV_the_red_army_experience_gain_army_factor = 0 }
 			set_variable = { SOV_the_red_army_experience_loss_factor = 0 }
+			set_variable = { SOV_the_red_army_mastery_loss_factor = 0 }
 
 			custom_effect_tooltip = SOV_lessons_of_war_ns_tt
+			effect_tooltip = {
+				#this should be the positive of whatever the negative mastery lsos is, only used for tooltip
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = SOV_the_red_army_mastery_loss_factor_inverted tooltip = land_mastery_gain_factor_tt } 
+			}
 
 			unlock_decision_tooltip = SOV_order_227
 			custom_effect_tooltip = SOV_lessons_of_war_unlock_military_operations_tt
@@ -7809,7 +7817,7 @@ focus_tree = {
 
 			#New
 			hidden_effect = {
-				set_technology = { masterful_blitz = 1 popup = no }
+			    unlock_tactic = tactic_masterful_blitz
 			}
 			custom_effect_tooltip = SOV_the_glory_of_the_red_army_masterful_blitz_tactic_tt
 			
@@ -7855,7 +7863,7 @@ focus_tree = {
 
 			#New
 			hidden_effect = {
-				set_technology = { masterful_blitz = 1 popup = no }
+			    unlock_tactic = tactic_masterful_blitz
 			}
 			custom_effect_tooltip = SOV_the_glory_of_the_red_army_masterful_blitz_tactic_tt
 		}
@@ -8452,6 +8460,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_political_power = 25
 			set_power_balance = {
 				id = NKVD_power_balance
 				set_default = yes
@@ -8502,7 +8511,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_political_power = 25
+			add_political_power = 35
 			if = {
 				limit = {
 					has_idea = SOV_nikolay_yezhov
@@ -8836,6 +8845,19 @@ focus_tree = {
 				SOV_paranoia_modifier_update_gui_tooltip = yes
 			}		
 			custom_effect_tooltip = SOV_increase_weekly_paranoia_in_trait_tt
+			
+			custom_effect_tooltip = newline_tt
+
+			if = {
+				limit = { NOT = { has_completed_focus = SOV_lessons_of_war } }
+				
+				custom_effect_tooltip = modify_the_red_army_tt
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = -0.05 tooltip = land_mastery_gain_factor_tt }
+
+				#Need for tooltip
+				set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+				multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+			}
 		}
 	}
 	
@@ -8880,7 +8902,7 @@ focus_tree = {
 			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_second_moscow_trial_CSR_flag #Used to unlock the next purge focus
 
-			#add_political_power = 15
+			add_political_power = 10
 
 			SOV_paranoia_medium_increase_effect = yes
 
@@ -8971,6 +8993,19 @@ focus_tree = {
 			
 			custom_effect_tooltip = CSR_we_limited_avoid_purge_expanded_once_tt
 			unlock_decision_tooltip = SOV_regularize_rule_of_nkvd_decision
+			
+			custom_effect_tooltip = newline_tt
+
+			if = {
+				limit = { NOT = { has_completed_focus = SOV_lessons_of_war } }
+				
+				custom_effect_tooltip = modify_the_red_army_tt
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = -0.02 tooltip = land_mastery_gain_factor_tt }
+
+				#Need for tooltip
+				set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+				multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+			}
 		}
 	}
 
@@ -8996,8 +9031,16 @@ focus_tree = {
 			custom_effect_tooltip = SOV_the_workers_dictatorship_ns_tt
 
 			add_political_power = 70
-
+			
+			add_power_balance_value = {
+				id = NKVD_power_balance
+				value = -0.05
+			}
+			
 			SOV_paranoia_low_decrease_effect = yes
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = high_industrial_accident_rate_decrease_pp_cost_2_tt
 		}
 	}
 
@@ -9124,6 +9167,18 @@ focus_tree = {
 			}
 
 			set_country_flag = SOV_stalinist_military_flag #New Generals have more chances of being Stalinists after this
+			
+			custom_effect_tooltip = newline_tt
+			if = {
+				limit = { NOT = { has_completed_focus = SOV_lessons_of_war } }
+				
+				custom_effect_tooltip = modify_the_red_army_tt
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = -0.05 tooltip = land_mastery_gain_factor_tt }
+
+				#Need for tooltip
+				set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+				multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+			}
 		}
 	}
 	
@@ -9168,7 +9223,7 @@ focus_tree = {
 			clr_country_flag = SOV_paranoia_do_not_cancel_focus_flag
 			set_country_flag = { flag = SOV_paranoia_random_purge_cooldown_from_focus_flag days = 15 } #Used to prevent random purges from popping up while this is active
 			set_country_flag = SOV_trial_of_the_generals_CSR_flag #Used to unlock the next purge focus
-			#add_political_power = 15
+			add_political_power = 10
 			
 			SOV_paranoia_medium_increase_effect = yes
 
@@ -9222,6 +9277,18 @@ focus_tree = {
 			custom_effect_tooltip = CSR_we_saved_yegorov_tt
 			custom_effect_tooltip = CSR_less_generals_scared_tt
 			custom_effect_tooltip = CSR_we_limited_avoid_purge_expanded_once_tt
+			
+			custom_effect_tooltip = newline_tt
+			if = {
+				limit = { NOT = { has_completed_focus = SOV_lessons_of_war } }
+				
+				custom_effect_tooltip = modify_the_red_army_tt
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = -0.03 tooltip = land_mastery_gain_factor_tt }
+
+				#Need for tooltip
+				set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+				multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+			}
 		}
 	}
 
@@ -11061,6 +11128,9 @@ focus_tree = {
 				set_rule = { can_create_factions = yes }
 			}
 			create_faction = FOURTH_INTERNATIONAL_FACTION
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = high_industrial_accident_rate_decrease_pp_cost_2_tt
 		}
 	}
 
@@ -11301,7 +11371,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_reigniting_the_revolutionary_spirit
 		
-		cost = 10
+		cost = 5
 
 		available = {
 			has_global_flag = SOV_soviet_civil_war_over
@@ -12514,6 +12584,9 @@ focus_tree = {
 				slot = political_advisor
 				trait = chair_of_the_unions
 			}
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = high_industrial_accident_rate_decrease_pp_cost_2_tt
 		}
 	}
 
@@ -14747,7 +14820,7 @@ ai_will_do = {
 					}
 					if = {
 						limit = {
-							has_tech = basic_medium_battery
+							has_tech = basic_heavy_battery
 						}
 						create_equipment_variant = {
 							name = "希佩尔海军上将级"
@@ -17200,7 +17273,7 @@ ai_will_do = {
 				custom_effect_tooltip = available_mio_tt
 				show_mio_tooltip = SOV_yokosuka_naval_organization
 				mio:SOV_yokosuka_naval_organization = {
-					add_mio_size = 3
+					add_mio_size = 5
 				}
 			}
 			else = {
@@ -20367,7 +20440,6 @@ ai_will_do = {
 				bonus = 1.0
 				uses = 4
 				category = dd_tech
-				category = cl_tech
 				category = ca_tech
 				category = bb_tech
 				category = cv_tech
@@ -20691,6 +20763,25 @@ ai_will_do = {
 	}
 	focus = {
 		id = SOV_spheres_of_influence_in_china
+		icon = GFX_focus_prc_social_democracy
+		x = 0
+		y = 0
+		allow_branch = { always = no }
+		cost = 10
+		ai_will_do = { factor = 0 }
+		available = {
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = SOV_prepare_a_war_with_japan
 		icon = GFX_focus_prc_social_democracy
 		x = 0
 		y = 0
