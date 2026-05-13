@@ -307,11 +307,10 @@ form_PORe_category = {
 				controls_state = 555
 				controls_state = 645
 				controls_state = 646
-				controls_state = 1017
+				controls_state = 648
 				controls_state = 1018
 				controls_state = 1019
 				controls_state = 1020
-				controls_state = 1021
 			}
 			custom_trigger_tooltip = {
 				tooltip = form_PORe_PHI_required_states_tt
@@ -322,6 +321,9 @@ form_PORe_category = {
 				626 = { controls_or_subject_of = yes }
 				627 = { controls_or_subject_of = yes }
 				628 = { controls_or_subject_of = yes }
+				1015 = { controls_or_subject_of = yes }
+				1016 = { controls_or_subject_of = yes }
+				1027 = { controls_or_subject_of = yes }
 			}
 			284 = { controls_or_subject_of = yes }
 			629 = { controls_or_subject_of = yes }
