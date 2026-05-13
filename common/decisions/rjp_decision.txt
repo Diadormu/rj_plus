@@ -278,6 +278,48 @@ foreign_influence = {
 form_PORe_category = {
 	form_PORe = {
 		icon = generic_form_nation
+		on_map_mode = decision_view_only
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 282
+				state = 526
+				state = 528
+				state = 529
+				state = 530
+				state = 531
+				state = 532
+				state = 533
+				state = 534
+				state = 535
+				state = 536
+				state = 555
+				state = 645
+				state = 646
+				state = 648
+				state = 1018
+				state = 1019
+				state = 1020
+				state = 327
+				state = 623
+				state = 624
+				state = 625
+				state = 626
+				state = 627
+				state = 628
+				state = 1015
+				state = 1016
+				state = 1027
+				state = 284
+				state = 629
+				state = 684
+				state = 638
+				state = 641
+				state = 646
+				state = 723
+				state = 726
+			}
+		}
+
 		allowed = {
 			original_tag = JAP
 		}
@@ -285,6 +327,7 @@ form_PORe_category = {
 			original_tag = JAP
 			NOT = { has_global_flag = form_PORe_flag }
 		}
+
 		available = {
 			OR = {
 				has_government = communism
@@ -334,8 +377,9 @@ form_PORe_category = {
 			723 = { controls_or_subject_of = yes }
 			726 = { controls_or_subject_of = yes }
 		}
+
 		complete_effect = {
-			set_cosmetic_tag = united_PORe
+			set_cosmetic_tag = JAP_pacific_union
 			# Polynesia
 			custom_effect_tooltip = form_country_polynesia_coring_states_tt
 			hidden_effect = {

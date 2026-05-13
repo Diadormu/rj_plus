@@ -60,9 +60,9 @@
   cjp.3103.a: "确实令人担忧"
 
   form_PORe_category: "统一太平洋诸岛"
-  form_PORe_category_desc: "随着夏威夷群岛、奥特亚罗瓦岛、塔希提岛和萨摩亚群岛都在我们控制之下，我们能够团结所有太平洋地区的人民。"
-  form_PORe: "成立太平洋共和国"
-  form_PORe_desc: "随着夏威夷群岛、奥特亚罗瓦岛、塔希提岛和萨摩亚群岛都在我们控制之下，我们能够团结所有太平洋地区的人民。"
+  form_PORe_category_desc: "$form_polynesia_desc$"
+  form_PORe: "成立太平洋苏维埃联盟"
+  form_PORe_desc: "$form_polynesia_desc$"
   form_PORe_JAP_required_states_tt: "控制§Y日本§!的所有地区。"
   form_PORe_PHI_required_states_tt: "控制§Y菲律宾§!的所有地区。"
   form_PORe_PHI_coring_states_tt: "获得§Y菲律宾§!所有地区的核心。"

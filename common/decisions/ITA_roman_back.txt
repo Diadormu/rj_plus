@@ -588,28 +588,6 @@ eng_common_functions_cat = {
 					province = 6103
 					value = 50
 				}
-				if = {
-					limit = {
-						COG = {
-							OR= {
-								exists = no
-								is_subject = yes
-							}
-							all_core_state = { is_owned_by_ROOT_or_ally = yes }
-						}
-					}
-					every_state = {
-						limit = {
-							OR = {
-								state = 768
-								state = 769
-								is_core_of = COG
-							}
-						}
-						transfer_state_to = COG
-					}
-					ENG = { puppet = COG }
-				}
 			}
 			GER = {
 				transfer_state = 7
@@ -640,6 +618,28 @@ eng_common_functions_cat = {
 				transfer_state = 923
 				transfer_state = 924
 				transfer_state = 925
+			}
+			if = {
+				limit = {
+					COG = {
+						OR= {
+							exists = no
+							is_subject = yes
+						}
+						all_core_state = { is_owned_by_ROOT_or_ally = yes }
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							state = 768
+							state = 769
+							is_core_of = COG
+						}
+					}
+					transfer_state_to = COG
+				}
+				GER = { puppet = COG }
 			}
 			ITA = {
 				transfer_state = 1
@@ -699,14 +699,14 @@ eng_common_functions_cat = {
 				}
 				BUL = { transfer_state = 77 }
 			}
-			if = {
-				limit = { is_in_faction_with = CRO }
-				CRO = { delete_unit = { disband = yes } }
-				GER = { annex_country = {
-					target = CRO
-					transfer_troops = yes
-				}}
-			}
+			#if = {
+			#	limit = { is_in_faction_with = CRO }
+			#	CRO = { delete_unit = { disband = yes } }
+			#	GER = { annex_country = {
+			#		target = CRO
+			#		transfer_troops = yes
+			#	}}
+			#}
 		}
 
 		ai_will_do = { base = 200 }

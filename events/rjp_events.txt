@@ -50,8 +50,18 @@ country_event = {
 				906 = { transfer_state_to = AOI }
 			}
 		ITA = {
-			annex_country = { target = PAL }
-			annex_country = { target = JOR }
+			if = {
+				limit = { is_in_faction_with = PAL }
+				annex_country = { target = PAL }
+			}
+			if = {
+				limit = { is_in_faction_with = LEB }
+				annex_country = { target = LEB }
+			}
+			if = {
+				limit = { is_in_faction_with = SYR }
+				annex_country = { target = SYR }
+			}
 		}
 		add_political_power = 35
 
