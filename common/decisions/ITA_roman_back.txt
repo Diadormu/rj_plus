@@ -224,12 +224,50 @@ form_roman_empire_category = {
 			base = 0
 			modifier = {
 				add = 200
-				OR = {
-					has_war_with = YUG
-					YUG = { exists = no }
+				YUG = {
+					OR = {
+						has_war_with = ITA
+						exists = no
+						is_in_faction_with = ITA
+					}
 				}
 			}
 		}
+	}
+
+	ita_annex_gre = {
+		icon = generic_independence
+		allowed = { original_tag = ITA }
+		visible = {
+			has_game_rule = { #新轴心世界线判定
+				rule = cjc_new_axis_rule
+				option = cjc_new_axis_established_rule
+			}
+			is_ai = yes
+			NOT = { has_global_flag = form_roman_empire_flag }
+			AND = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
+			OR = {
+				has_completed_focus = ITA_mare_nostrum_bba
+				has_completed_focus = ITA_the_catholic_dominion
+			}
+		}
+
+		available = {
+			GRE = {
+				is_ai = yes
+				exists = yes
+				has_truce_with = ITA
+				NOT = { has_war_with = ITA }
+			}
+		}
+		complete_effect = {
+			ITA = { annex_country = { target = GRE } }
+		}
+
+		ai_will_do = { base = 200 }
 	}
 
 	demand_FRA_required_states = {
@@ -246,9 +284,13 @@ form_roman_empire_category = {
 				rule = cjc_new_axis_rule
 				option = cjc_new_axis_established_rule
 			}
-			NOT = {
-				country_exists = FRA
-				has_global_flag = form_roman_empire_flag
+			NOT = { has_global_flag = form_roman_empire_flag }
+			FRA = {
+				OR = {
+					exists = no
+					is_subject_of = GER
+					is_subject_of = ENG
+				}
 			}
 			AND = {
 				is_in_faction_with = GER
@@ -294,10 +336,14 @@ form_roman_empire_category = {
 				rule = cjc_new_axis_rule
 				option = cjc_new_axis_established_rule
 			}
-			NOT = {
-				country_exists = FRA
-				has_global_flag = form_roman_empire_flag
+			FRA = {
+				OR = {
+					exists = no
+					is_subject_of = GER
+					is_subject_of = ENG
+				}
 			}
+			NOT = { has_global_flag = form_roman_empire_flag }
 			AND = {
 				is_in_faction_with = GER
 				is_in_faction_with = ENG
@@ -346,11 +392,19 @@ form_roman_empire_category = {
 				has_completed_focus = ITA_mare_nostrum_bba
 				has_completed_focus = ITA_the_catholic_dominion
 			}
-			NOT = {
-				country_exists = YUG
-				country_exists = GRE
-				has_global_flag = form_roman_empire_flag
+			YUG = {
+				OR = {
+					exists = no
+					is_in_faction_with = ITA
+				}
 			}
+			GRE = {
+				OR = {
+					exists = no
+					is_in_faction_with = ITA
+				}
+			}
+			NOT = { has_global_flag = form_roman_empire_flag }
 		}
 		available = {
 			any_country = {
@@ -436,10 +490,14 @@ form_roman_empire_category = {
 			base = 0
 			modifier = {
 				add = 200
-				NOT = {
-					country_exists = YUG
-					country_exists = GRE
+				YUG = {
+					OR = {
+						has_war_with = ITA
+						exists = no
+						is_in_faction_with = ITA
+					}
 				}
+				GRE = { exists = no }
 			}
 		}
 	}
@@ -485,10 +543,14 @@ form_roman_empire_category = {
 			base = 0
 			modifier = {
 				add = 200
-				NOT = {
-					country_exists = YUG
-					country_exists = GRE
+				YUG = {
+					OR = {
+						has_war_with = ITA
+						exists = no
+						is_in_faction_with = ITA
+					}
 				}
+				GRE = { exists = no }
 			}
 		}
 	}
@@ -640,6 +702,24 @@ eng_common_functions_cat = {
 					transfer_state_to = COG
 				}
 				GER = { puppet = COG }
+				every_state = {
+					limit = {
+						OR = {
+							state = 796
+							state = 540
+							state = 891
+							state = 892
+							state = 772
+							state = 539
+							state = 297
+							state = 773
+							state = 660
+							state = 774
+						}
+						is_owned_by_ROOT_or_ally = yes
+					}
+					transfer_state_to = GER
+				}
 			}
 			ITA = {
 				transfer_state = 1
@@ -741,16 +821,25 @@ Ger_babarosa_attack = {
 			}
 			has_war_with = NOR
 			NOR = {
-				is_major = yes
+				#is_major = yes
 				is_ai = yes
 				OR = {
 					GRE = { OR= {
 						exists = no
 						is_subject = yes
 					}}
-					is_in_faction_with = GRE
+					AND = {
+						is_in_faction_with = GRE
+						all_allied_country = { has_capitulated = yes }
+					}
+					FRA = {
+						OR = {
+							exists = no
+							is_subject_of = GER
+							is_subject_of = ENG
+						}
+					}
 				}
-				all_allied_country = { has_capitulated = yes }
 			}
 		}
 		complete_effect = {
