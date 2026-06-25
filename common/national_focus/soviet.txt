@@ -328,8 +328,8 @@ focus_tree = {
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SOV_fyp_controlled_factories_tier_1_tt
-				NOT = { num_of_controlled_factories < SOV_fyp_factory_requirement_tier_1 }
+				tooltip = SOV_fyp_controlled_factories_tier_1_cjc_tt
+				NOT = { num_of_controlled_factories < 95 }
 			}
 		}
 		
@@ -348,43 +348,103 @@ focus_tree = {
 		}
 
 		completion_reward = { #TODO_Manu: This is just copy-pasted from the old focus -> Is this what we want?
-			random_owned_controlled_state = {
-				limit = {
-					industrial_complex > 0
-					free_building_slots = {
-						building = industrial_complex
-						size > 2
-						include_locked = yes
+			custom_effect_tooltip = cjc_sov_planned_econ_peace_law_upgraded_tt
+			show_ideas_tooltip = sov_idea_planned_economy_peace_2
+			hidden_effect = {
+				if = {
+					limit = {
+						has_idea = sov_idea_planned_economy_peace_1
 					}
+					add_ideas = sov_idea_planned_economy_peace_2
 				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				set_state_flag = SOV_finish_five_year_plan_2IC
 			}
-			random_owned_controlled_state = {
-				limit = {
-					industrial_complex > 0
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-				set_state_flag = SOV_finish_five_year_plan_2IC
-			}
-
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = SOV_lazar_kaganovich
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = cjc_we_get_bonus_after_1937_4_five_years_plan_tt
+			effect_tooltip = {
+				random_owned_controlled_state = {
+					limit = {
+						industrial_complex > 0
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = SOV_finish_five_year_plan_2IC
+				}
+				random_owned_controlled_state = {
+					limit = {
+						industrial_complex > 0
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = SOV_finish_five_year_plan_2IC
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						or = {
+							date > 1937.3.1
+							is_ai = yes
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							industrial_complex > 0
+							free_building_slots = {
+								building = industrial_complex
+								size > 2
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						set_state_flag = SOV_finish_five_year_plan_2IC
+					}
+					random_owned_controlled_state = {
+						limit = {
+							industrial_complex > 0
+							free_building_slots = {
+								building = industrial_complex
+								size > 1
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						set_state_flag = SOV_finish_five_year_plan_2IC
+					}
+				}
+			}
 		}
 	}
 
@@ -468,7 +528,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_finish_the_five_year_plan
-		cost = 10
+		cost = 5
 
 		available = {
 			SOV_third_five_year_plan_available = yes
@@ -519,6 +579,7 @@ focus_tree = {
 					category = construction_tech
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			unlock_decision_tooltip = SOV_third_five_years_plan_agriculture_machenized
 		}
 	}
@@ -718,6 +779,16 @@ focus_tree = {
 			every_owned_state = { #Tooltip purposes (lets you know which states have been selected once the focus is completed)
 				limit = {
 					has_state_flag = SOV_increase_state_reserves_flag
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = cjc_sov_if_227_is_lost_tt
+			effect_tooltip = {
+				572 = {
+					add_resource = {
+						type = coal
+						amount = 24
+					}
 				}
 			}
 		}
@@ -1978,8 +2049,8 @@ focus_tree = {
 		id = SOV_the_ussr_academy_of_sciences
 
 		icon = GFX_focus_research
-		prerequisite = { focus = SOV_eastern_development }
-		prerequisite = { focus = SOV_develop_the_urals }
+		prerequisite = { focus = SOV_eastern_development focus = SOV_develop_the_urals }
+		#prerequisite = { focus = SOV_develop_the_urals }
 		x = 1
 		y = 1
 		relative_position_id = SOV_eastern_development
@@ -2922,7 +2993,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = SOV_expand_the_red_fleet
-		cost = 3
+		cost = 2
 
 		available = {
 			195 = { #LENINGRAD
@@ -3066,7 +3137,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = SOV_expand_the_red_fleet
-		cost = 3
+		cost = 2
 
 		available = {
 			OR = {
@@ -3155,7 +3226,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = SOV_expand_the_red_fleet
-		cost = 3
+		cost = 2
 
 		available = {
 			OR = {
@@ -3282,7 +3353,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SOV_expand_the_red_fleet
-		cost = 3
+		cost = 2
 
 		available = {
 			OR = {
@@ -6593,7 +6664,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_improve_the_stalin_line
-		cost = 5
+		cost = 3
 
 		available = {
 			OR = {
@@ -6698,7 +6769,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = SOV_military_engineering_university
-		cost = 5
+		cost = 3
 
 		available = {
 			has_full_control_of_state = 215 #ONEGA
@@ -6813,7 +6884,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 5
+		cost = 3
 
 		available = {
 			OR = {
@@ -7156,6 +7227,18 @@ focus_tree = {
 			add_timed_idea = {
 				idea = SOV_desperate_measures_ns
 				days = 365
+			}
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						or = {
+							has_idea = sov_idea_planned_economy_peace_2
+							has_idea = sov_idea_planned_economy_prepare_1
+						}
+					}
+					add_ideas = sov_idea_planned_economy_wartime_1
+				}
 			}
 
 			custom_effect_tooltip = SOV_desperate_measures_decisions_unlocked_tt
@@ -7876,7 +7959,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SOV_found_the_jet_institute
-		cost = 5
+		cost = 10
 
 		available = {
 			
@@ -8302,7 +8385,7 @@ focus_tree = {
 			custom_effect_tooltip = SOV_socialism_in_one_country_ns_tt
 
 			add_political_power = 50
-
+			
 			SOV_paranoia_low_decrease_effect = yes
 		}
 	}
@@ -8460,7 +8543,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_political_power = 25
+			add_political_power = 20
 			set_power_balance = {
 				id = NKVD_power_balance
 				set_default = yes
@@ -8511,7 +8594,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_political_power = 35
+			add_political_power = 30
 			if = {
 				limit = {
 					has_idea = SOV_nikolay_yezhov
@@ -8594,7 +8677,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_the_stalin_constitution
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -8718,7 +8801,8 @@ focus_tree = {
 				}
 			}
 
-			SOV_paranoia_medium_decrease_effect = yes
+			#SOV_paranoia_medium_decrease_effect = yes
+			SOV_paranoia_low_decrease_effect = yes
 		}
 	}
 
@@ -9809,8 +9893,7 @@ focus_tree = {
 	focus = {
 		id = SOV_establish_the_supreme_soviet
 		icon = GFX_focus_SOV_the_supreme_soviet
-		prerequisite = { focus = SOV_hold_first_election }
-		prerequisite = { focus = SOV_everybody_young_lenin focus = SOV_advanced_soviet_arts }
+		prerequisite = { focus = SOV_everybody_young_lenin focus = SOV_hold_first_election focus = SOV_advanced_soviet_arts }
 		x = 0
 		y = 2
 		relative_position_id = SOV_hold_first_election
@@ -9833,6 +9916,15 @@ focus_tree = {
 			}
 			hidden_effect = {
 				play_song = "comintern_war_1"
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = cjc_sov_change_color_rule
+							option = DEFAULT
+						}
+					}
+					set_cosmetic_tag = SOV_centrist_opposition
+				}
 			}
 		}
 	}
@@ -15569,7 +15661,7 @@ ai_will_do = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_baltic_security
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -15642,7 +15734,7 @@ ai_will_do = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_baltic_security
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -15761,7 +15853,7 @@ ai_will_do = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_respect_baltic_self_determination
-		cost = 3
+		cost = 2
 		
 		ai_will_do = {
 			factor = 1
@@ -15817,11 +15909,17 @@ ai_will_do = {
 				event_option_tooltip = soviet.12.a
 			}
 			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			146 = {
 				set_state_flag = CSR_SOV_can_core_this_state_flag
 			}
 			unlock_decision_tooltip = CSR_recover_old_cores_decision
 			custom_effect_tooltip = CSR_recover_old_cores_decision_Karjala_tt
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = SOV_lesson_of_the_finnish_war
+			custom_effect_tooltip = SOV_lesson_of_the_finnish_war_tt
 		}
 	}
 

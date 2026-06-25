@@ -309,14 +309,19 @@ form_PORe_category = {
 				state = 1025
 				state = 1026
 				state = 1027
-				state = 284
-				state = 629
-				state = 684
-				state = 638
-				state = 641
-				state = 646
-				state = 723
-				state = 726
+				state = 284 # Wellington
+				state = 1079 # Auckland
+				state = 629 #Hawaii
+				state = 684 #Caroline Islands
+				state = 638 #Guam
+				state = 641 #Tahiti
+				state = 646 #Saipan
+				state = 723 # Canterbury
+				state = 1080 # Marlborough
+				state = 1081 # Otago
+				state = 726 #Samoa
+				state = 1071 #Vanuatu
+				state = 1072 #American Samoa
 			}
 		}
 
@@ -369,13 +374,18 @@ form_PORe_category = {
 				1027 = { controls_or_subject_of = yes }
 			}
 			284 = { controls_or_subject_of = yes }
+			1079 = { controls_or_subject_of = yes }
 			629 = { controls_or_subject_of = yes }
 			684 = { controls_or_subject_of = yes }
 			638 = { controls_or_subject_of = yes }
 			641 = { controls_or_subject_of = yes }
 			646 = { controls_or_subject_of = yes }
 			723 = { controls_or_subject_of = yes }
+			1080 = { controls_or_subject_of = yes }
+			1081 = { controls_or_subject_of = yes }
 			726 = { controls_or_subject_of = yes }
+			1071 = { controls_or_subject_of = yes }
+			1072 = { controls_or_subject_of = yes }
 		}
 
 		complete_effect = {
@@ -386,6 +396,8 @@ form_PORe_category = {
 				284 = { add_core_of = ROOT }
 				transfer_state = 284
 				#524 = { add_core_of = ROOT } #Taiwan
+				1079 = { add_core_of = ROOT }
+				transfer_state = 1079
 				629 = { add_core_of = ROOT }
 				transfer_state = 629
 				630 = { add_core_of = ROOT }
@@ -412,6 +424,11 @@ form_PORe_category = {
 				if = {
 					limit = { 634 = { controls_or_subject_of = yes } }
 					transfer_state = 634
+				}
+				1070 = { add_core_of = ROOT }
+				if = {
+					limit = { 1070 = { controls_or_subject_of = yes } }
+					transfer_state = 1070
 				}
 				635 = { add_core_of = ROOT }
 				if = {
@@ -463,6 +480,10 @@ form_PORe_category = {
 				transfer_state = 684
 				723 = { add_core_of = ROOT }
 				transfer_state = 723
+				1080 = { add_core_of = ROOT }
+				transfer_state = 1080
+				1081 = { add_core_of = ROOT }
+				transfer_state = 1081
 				725 = { add_core_of = ROOT }
 				if = {
 					limit = { 725 = { controls_or_subject_of = yes } }
@@ -490,6 +511,10 @@ form_PORe_category = {
 					limit = { 948 = { controls_or_subject_of = yes } }
 					transfer_state = 948
 				}
+				1071 = { add_core_of = ROOT }
+				transfer_state = 1071
+				1072 = { add_core_of = ROOT }
+				transfer_state = 1072
 			}
 			custom_effect_tooltip = form_PORe_PHI_coring_states_tt
 			hidden_effect = {
