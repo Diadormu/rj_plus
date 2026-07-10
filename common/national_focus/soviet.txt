@@ -341,7 +341,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -371,14 +371,14 @@ focus_tree = {
 						industrial_complex > 0
 						free_building_slots = {
 							building = industrial_complex
-							size > 2
+							size > 1
 							include_locked = yes
 						}
 					}
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 					set_state_flag = SOV_finish_five_year_plan_2IC
@@ -395,7 +395,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 					set_state_flag = SOV_finish_five_year_plan_2IC
@@ -405,7 +405,7 @@ focus_tree = {
 				if = {
 					limit = {
 						or = {
-							date > 1937.3.1
+							date > 1937.5.1
 							is_ai = yes
 						}
 					}
@@ -414,14 +414,14 @@ focus_tree = {
 							industrial_complex > 0
 							free_building_slots = {
 								building = industrial_complex
-								size > 2
+								size > 1
 								include_locked = yes
 							}
 						}
 						add_extra_state_shared_building_slots = 2
 						add_building_construction = {
 							type = industrial_complex
-							level = 1
+							level = 2
 							instant_build = yes
 						}
 						set_state_flag = SOV_finish_five_year_plan_2IC
@@ -438,7 +438,7 @@ focus_tree = {
 						add_extra_state_shared_building_slots = 2
 						add_building_construction = {
 							type = industrial_complex
-							level = 1
+							level = 2
 							instant_build = yes
 						}
 						set_state_flag = SOV_finish_five_year_plan_2IC
@@ -787,7 +787,37 @@ focus_tree = {
 				572 = {
 					add_resource = {
 						type = coal
-						amount = 24
+						amount = 36
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = cjc_sov_if_222_is_lost_tt
+			effect_tooltip = {
+				651 = {
+					add_resource = {
+						type = steel
+						amount = 18
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = cjc_sov_if_221_is_lost_tt
+			effect_tooltip = {
+				582 = {
+					add_resource = {
+						type = steel
+						amount = 18
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = cjc_sov_if_234_is_lost_tt
+			effect_tooltip = {
+				572 = {
+					add_resource = {
+						type = tungsten
+						amount = 12
 					}
 				}
 			}
@@ -7364,6 +7394,9 @@ focus_tree = {
 			custom_effect_tooltip = SOV_lessons_of_war_unlock_military_operations_tt
 
 			custom_effect_tooltip = SOV_lessons_of_war_cowed_trait_tt
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			unlock_decision_tooltip = SOV_strengthen_the_defense_line_decision
 			hidden_effect = {
 				every_army_leader = {
 					limit = {
@@ -7412,6 +7445,7 @@ focus_tree = {
 		completion_reward = {
 			
 			add_ideas = SOV_wartime_production
+			unlock_decision_tooltip = SOV_reuse_mosin_gun_stock_from_WWI_decision
 			
 			custom_effect_tooltip = cjc_when_focus_selected_effect_tt
 			custom_effect_tooltip = CSR_SOV_we_will_build_air_base_frontline_tt
@@ -8039,6 +8073,9 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
 			unlock_decision_tooltip = sov_siberia_develop_project
+			hidden_effect = {
+				country_event = CSR_SOV_events.25
+			}
 		}
 	}
 	
@@ -8394,7 +8431,7 @@ focus_tree = {
 		id = SOV_the_stalin_constitution
 		icon = GFX_SOV_the_stalin_constitutiony_ccp_2d_sov_compatibility #GFX_goal_support_communism
 		prerequisite = { focus = SOV_the_centre }
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = SOV_the_centre
 		cost = 10
@@ -8424,7 +8461,7 @@ focus_tree = {
 		id = SOV_the_zinovyevite_terrorist_center
 		icon = GFX_focus_SOV_purge_zinovyevists
 		prerequisite = { focus = SOV_the_stalin_constitution }
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = SOV_the_stalin_constitution
 		cost = 5
@@ -8525,7 +8562,7 @@ focus_tree = {
 		id = SOV_secure_the_nkvd
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = SOV_the_stalin_constitution }
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = SOV_the_stalin_constitution
 		cost = 5
@@ -8643,7 +8680,7 @@ focus_tree = {
 		id = SOV_secure_the_administration
 		icon = GFX_focus_generic_join_comintern
 		prerequisite = { focus = SOV_the_zinovyevite_terrorist_center }
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = SOV_the_zinovyevite_terrorist_center
 		cost = 5
@@ -9647,7 +9684,7 @@ focus_tree = {
 		id = SOV_recover_stability
 		icon = GFX_goal_tripartite_pact
 		prerequisite = { focus = SOV_the_bloc_of_rights_and_trotskyites focus = SOV_letters_of_bukharin }
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = SOV_the_bloc_of_rights_and_trotskyites
 		cost = 5
@@ -9669,19 +9706,19 @@ focus_tree = {
 				limit = {
 					has_completed_focus = SOV_arrests_trotskyist_supporters
 				}
-				add_political_power = 50
+				add_political_power = 40
 			}
 			if = {
 				limit = {
 					has_completed_focus = SOV_the_military_conspiracy_2
 				}
-				add_political_power = 50
+				add_political_power = 40
 			}
 			if = {
 				limit = {
 					has_country_flag = CSR_save_bukharin_flag
 				}
-				add_political_power = 50
+				add_political_power = 40
 			}
 			remove_all_power_balance_modifiers = {
 				id = NKVD_power_balance
@@ -9841,6 +9878,12 @@ focus_tree = {
 			add_political_power = 100
 			add_stability = 0.05
 			unlock_decision_tooltip = CSR_SOV_people_democratic_decision
+			hidden_effect = {
+				country_event = {
+					id = CSR_SOV_events.22
+					hours = 6
+				}
+			}
 		}
 	}
 	
@@ -10542,6 +10585,7 @@ focus_tree = {
 						}
 					}		
 				}
+				country_event = CSR_SOV_events.24
 			}
 		}
 	}
@@ -11200,7 +11244,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_left_opposition_coup
-		cost = 10
+		cost = 5
 
 		available = {
 			has_global_flag = SOV_soviet_civil_war_over
@@ -11268,7 +11312,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_long_live_the_workers_government
 		mutually_exclusive = { focus = SOV_reigniting_the_revolutionary_spirit }
-		cost = 10
+		cost = 5
 
 		available = {
 			SOV_lev_trotsky = {	is_country_leader = yes }
@@ -11321,7 +11365,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SOV_long_live_the_workers_government
 		mutually_exclusive = { focus = SOV_the_builder_of_the_red_army }
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -11569,6 +11613,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_STABILITY}
 
 		completion_reward = {
+			add_political_power = 150
 			add_ideas = SOV_the_local_soviets_idea
 		}
 	}
@@ -12451,7 +12496,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SOV_coup_detat
-		cost = 10
+		cost = 5
 		available = {
 		}
 		                
@@ -12532,7 +12577,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_curtailment_of_the_collective_farms
-		cost = 10
+		cost = 5
 		available = {
 			has_war = no
 		}
@@ -12658,7 +12703,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SOV_back_to_the_nep
-		cost = 10
+		cost = 5
 		available = {
 			has_idea = SOV_mikhail_tomsky
 		}
@@ -13763,7 +13808,7 @@ focus_tree = {
 			}
 		}
 		offset = {
-			x = -26
+			x = -24
 			y = 0
 			trigger = {
 				has_dlc = "No Step Back"
@@ -15875,11 +15920,20 @@ ai_will_do = {
 			#	is_in_faction_with = FIN
 			#	has_country_flag = FIN_finno_soviet_pact_flag
 			#}
+			146 = {
+				owner = {
+					or = {
+						is_in_faction_with = ROOT
+						tag = ROOT
+					}
+				}
+			}
 		}
 		
 		search_filters = {FOCUS_FILTER_ANNEXATION}
 
 		completion_reward = {
+			add_war_support = 0.03
 			add_state_claim = 146 # Karjala
 
 			if= {
@@ -15918,6 +15972,7 @@ ai_will_do = {
 			custom_effect_tooltip = CSR_recover_old_cores_decision_Karjala_tt
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
+			set_country_flag = SOV_lesson_of_the_finnish_war_flag
 			unlock_decision_tooltip = SOV_lesson_of_the_finnish_war
 			custom_effect_tooltip = SOV_lesson_of_the_finnish_war_tt
 		}
@@ -16705,7 +16760,7 @@ ai_will_do = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_middle_east_diplomacy
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -16838,7 +16893,7 @@ ai_will_do = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_middle_east_diplomacy
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -16874,7 +16929,7 @@ ai_will_do = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_support_afghan_ideology
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -17240,6 +17295,9 @@ ai_will_do = {
 					idea = cjc_together_build_railway
 					days = 1200
 				}
+			}
+			hidden_effect = {
+				country_event = CSR_SOV_events.23
 			}
 		}
 	}
