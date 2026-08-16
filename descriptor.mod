@@ -3,9 +3,8 @@ dependencies={
 	"人名和部队名称汉化补充"
 	"Formable nations optimisation"
 	"Cancel mutually_exclusive Plus"
-	"日共重置&中共日共联动"
+	"日共重置：粉碎帝国"
 	"Communist Japan - Unstoppable Asian Revolution"
-	"日共重置地块细分"
 }
 tags={
 	"Alternative History"

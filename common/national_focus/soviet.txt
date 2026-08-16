@@ -7712,6 +7712,52 @@ focus_tree = {
 				remove_idea = SOV_rehabilitated_military_ns
 				add_idea = SOV_rehabilitated_military_2_ns
 			}
+			division_template = {
+				name = "Reorganized Armies"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
+					artillery_brigade = { x = 4 y = 0 }
+					artillery_brigade = { x = 4 y = 1 }
+					anti_air_brigade = { x = 4 y = 2 }
+					anti_tank_brigade = { x = 4 y = 3 }
+				}
+				regimental_support = {
+					fire_support = { x = 0 y = 0 }
+					fire_support = { x = 1 y = 0 }
+					fire_support = { x = 2 y = 0 }
+					anti_air_battery = { x = 3 y = 0 }
+					anti_tank_battery = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					artillery = { x = 0 y = 3 }
+					field_hospital = { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 252 }
+				create_unit = {
+					division = "name = \"Reorganized Army\" division_template = \"Reorganized Armies\" start_experience_factor = 0.1" 
+					owner = SOV
+					count = 6
+				}
+			}
 		}
 	}
 
@@ -7893,6 +7939,61 @@ focus_tree = {
 					}
 				}
 			}
+		}
+	}
+
+	focus = {
+		id = SOV_liberate_our_territory
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = SOV_everything_for_the_war }
+		#prerequisite = { focus = SOV_experts_in_camouflage }
+		prerequisite = { focus = SOV_keep_commissars_organization focus = SOV_swap_to_political_advisors }
+		x = 0
+		y = 2
+		relative_position_id = SOV_experts_in_camouflage
+		cost = 5
+
+		available = {
+			has_dynamic_modifier = { modifier = cjc_sov_dmi_expert_officers }
+			date > 1943.1.1
+			or = {
+				surrender_progress > 0.2
+				date > 1945.1.1
+			}
+		}
+
+		search_filters = {}
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_command_power = 100
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = cjc_sov_dmi_expert_officers_buffed
+			add_to_variable = { cjc_sov_var_expert_officers_air_home_defence_factor = 0.10 tooltip = air_home_defence_factor_tt }
+			add_to_variable = { cjc_sov_var_expert_officers_supply_node_range = 0.05 tooltip = supply_node_range_tt }
+			if = {
+				limit = { date > 1946.1.1 }
+				add_to_variable = { cjc_sov_var_expert_officers_army_core_attack_factor = 0.20 tooltip = army_core_attack_factor_tt }
+			}
+			else_if = {
+				limit = { date > 1945.1.1 }
+				add_to_variable = { cjc_sov_var_expert_officers_army_core_attack_factor = 0.15 tooltip = army_core_attack_factor_tt }
+				set_country_flag = SOV_liberate_our_territory_1_flag
+			}
+			else_if = {
+				limit = { date > 1944.1.1 }
+				add_to_variable = { cjc_sov_var_expert_officers_army_core_attack_factor = 0.10 tooltip = army_core_attack_factor_tt }
+				set_country_flag = SOV_liberate_our_territory_1_flag
+				set_country_flag = SOV_liberate_our_territory_2_flag
+			}
+			else = {
+				add_to_variable = { cjc_sov_var_expert_officers_army_core_attack_factor = 0.05 tooltip = army_core_attack_factor_tt }
+				set_country_flag = SOV_liberate_our_territory_1_flag
+				set_country_flag = SOV_liberate_our_territory_2_flag
+				set_country_flag = SOV_liberate_our_territory_3_flag
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = SOV_liberate_our_territory_tt
 		}
 	}
 
